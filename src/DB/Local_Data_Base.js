@@ -10,8 +10,63 @@ export const NavBar1Data = [
 ];
 
 //todo // this is data for the nav_bar_2 and its dropdown
-
 export const nav_2_data = [
+  //todo Reservation
+  {
+    title: "Reservation",
+    img: "./navbar-2-dropdown-pictures/bonvoyage-car-rentals-reservation-image.avif",
+    links: [
+      {
+        heading: " car rental",
+        linkItems: [
+          "start-a-car-reservation",
+          "third-party-reservations",
+          "how-we-operate",
+          "services",
+        ],
+      },
+
+      {
+        heading: " businesses",
+        linkItems: ["buy-a-car", "sell-a-car"],
+      },
+      {
+        heading: " good deals",
+        linkItems: ["cars-under-$500", "insured-cars"],
+      },
+      {
+        heading: " promo",
+        linkItems: ["special-offers", "for-events"],
+      },
+    ],
+  },
+  //todo Locations
+  {
+    title: "Locations",
+    links: [
+      {
+        heading: "Maryland",
+        linkItems: ["Lanham-MD", "Laurel-MD"],
+      },
+      {
+        heading: "minnesota",
+        linkItems: ["bloomington-MT"],
+      },
+
+      {
+        heading: "tennessee",
+        linkItems: ["clarksville-TN"],
+      },
+      {
+        heading: "Virginia",
+        linkItems: ["woodbridge-VA"],
+      },
+    ],
+
+    img: "./navbar-2-dropdown-pictures/bonvoyage-car-rentals-marryLand-location.webp",
+  },
+
+  //todo Vehicles
   {
     title: "Vehicles",
     img: "./navbar-2-dropdown-pictures/bonvoyage-car-rentals-marryLand-vehicles.webp",
@@ -46,97 +101,13 @@ export const nav_2_data = [
     ],
   },
 
-  {
-    title: "Reservation",
-    img: "./navbar-2-dropdown-pictures/bonvoyage-car-rentals-reservation-image.avif",
-    links: [
-      {
-        heading: " car rental",
-        linkItems: [
-          "start-a-car-reservation",
-          "third-party-reservations",
-          "How-we-work",
-          "services",
-        ],
-      },
-      {
-        heading: " businesses",
-        linkItems: ["buy-a-car", "sell-a-car"],
-      },
-      {
-        heading: " good deals",
-        linkItems: ["cars-under-$500", "insured-cars"],
-      },
-      {
-        heading: " promo",
-        linkItems: ["special-offers", "for-events"],
-      },
-    ],
-  },
-
-  {
-    title: "Locations",
-    links: [
-      {
-        heading: "Maryland",
-        linkItems: ["lanham-maryland"],
-      },
-      {
-        heading: "minnesota",
-        linkItems: ["bloomington-minnesota"],
-      },
-      {
-        heading: "tennessee",
-        linkItems: ["clarksville-tennessee"],
-      },
-      {
-        heading: "Virginia",
-        linkItems: ["woodbridge-virginia"],
-      },
-    ],
-
-    img: "./navbar-2-dropdown-pictures/bonvoyage-car-rentals-marryLand-location.webp",
-  },
-  {
-    title: "Learn",
-    links: [
-      {
-        heading: "blogs",
-        linkItems: [
-          "accident-in-rental-car",
-          "avoid-pay-deposit",
-          "knowledge-on-car-crash",
-          "what-to-know-on-car-crash-without-insurance",
-          "crash-without-insurance",
-          "insurance-importance",
-          "out-of-state-overview",
-          "how-to-pay-tolls",
-          "effects-of-taking-rental-car-out-of-state",
-          "results-on-stolen-rental-car",
-          "who-pays-for-rental-car-repairs",
-          "requirements-for-renting-car",
-          "when-to-report-stolen-rental-vehicle",
-          "best-car-companies-in-lanham",
-          "best-short-term-car-rental-in-lanham",
-        ],
-      },
-      {
-        heading: "safety",
-        linkItems: [
-          "accident-in-rental-car",
-          "avoid-pay-deposit",
-          "knowledge-on-car-crash",
-        ],
-      },
-    ],
-    img: "./navbar-2-dropdown-pictures/bonvoyage-car-rentals-learn-image.jpg",
-  },
+  //todo business
   {
     title: "business",
     links: [
       {
         heading: "buy sell cars",
-        linkItems: ["buy-a-car", "sell a car", "our-vehicle-collection"],
+        linkItems: ["buy-a-car", "sell-a-car", "our-vehicle-collection"],
       },
       {
         heading: "Rent to own",
@@ -152,6 +123,69 @@ export const nav_2_data = [
       },
     ],
     img: "./navbar-2-dropdown-pictures/bonvoyage-car-rental-business-image.avif",
+  },
+
+  //todo Learn
+  {
+    title: "Learn",
+    links: [
+      {
+        heading: "about",
+        linkItems: [
+          "our-safety-policy",
+          "Our-offerings",
+          "How-we-operate",
+          "Overview",
+        ],
+      },
+
+      {
+        heading: "safety",
+        linkItems: [
+          "accident-in-rental-car",
+          "Rental-car-stolen",
+          "when-to-report-stolen-rental-vehicle",
+          "requirements-for-renting-car",
+        ],
+      },
+
+      {
+        heading: "safe cash",
+        linkItems: [
+          "Avoid-Paying-Deposits",
+          "Insurance-Importance",
+          "who-pays-for-rental-car-repairs",
+          "results-on-stolen-rental-car",
+        ],
+      },
+
+      {
+        heading: "penalties",
+        linkItems: [
+          "accident-in-rental-car",
+          "Driver-fault",
+          // "out-of-state-overview",
+          "Car-crash-without-insurance",
+        ],
+      },
+
+      {
+        heading: "blogs",
+        linkItems: [
+          "Accident",
+          "No-Insurance-crash",
+          "Pay-tolls",
+          "Rental-car-state",
+          "Repairs",
+          "Requirements",
+          "Time-to-report-stolen",
+          "knowledge-on-car-crash",
+          "Best-Car-companies",
+          "best-short-term-car-rental-in-lanham",
+        ],
+      },
+    ],
+    img: "./navbar-2-dropdown-pictures/bonvoyage-car-rentals-learn-image.jpg",
   },
 ];
 
@@ -836,3 +870,21 @@ export const vehicleCategory = [
     price: 75,
   },
 ];
+
+// [
+//   "accident-in-rental-car",
+//   "avoid-pay-deposit",
+//   "knowledge-on-car-crash",
+//   "what-to-know-on-car-crash-without-insurance",
+//   "crash-without-insurance",
+//   "insurance-importance",
+//   "out-of-state-overview",
+//   "how-to-pay-tolls",
+//   "effects-of-taking-rental-car-out-of-state",
+//   "results-on-stolen-rental-car",
+//   "who-pays-for-rental-car-repairs",
+//   "requirements-for-renting-car",
+//   "when-to-report-stolen-rental-vehicle",
+//   "best-car-companies-in-lanham",
+//   "best-short-term-car-rental-in-lanham",
+// ],

@@ -45,10 +45,10 @@ import Contact from "./components/Contact";
 import Services from "./pages/Reservations/Services";
 import SellACar from "./pages/Business/SellACar";
 import UserDashboard from "./components/UserDashboard";
-import ReserveForThirdPartyAndHolidayOffers from "./pages/Reservations/ReserveForThirdPartyAndHolidayOffers";
 import AllVehicleCategory from "./pages/Vehicles/AllVehicleCategory";
 import AvailableCars from "./pages/Vehicles/VehicleCategory";
 import Cars from "./components/ui/Header/NavBar-2/Cars";
+import ReserveForThirdPartyAndHolidayOffers from "./pages/Reservations/ReserveForThirdPartyAndHolidayOffers";
 // import BookingForm from "./components/Form/BookingForm";
 
 const App = () => {
@@ -70,19 +70,13 @@ const App = () => {
             {/* //todo //: route for navbar-_2 */}
             {/*  route path for Reservation */}
             <Route
-              path="start-a-Car-Reservation"
+              path="start-a-car-reservation"
               element={<StartCarReservation />}
             />
-
             <Route
-              path="third-party-reservation"
+              path="third-party-reservations"
               element={<ReserveForThirdPartyAndHolidayOffers />}
             />
-            {/* 
-            <Route
-              path="About-third-party"
-              element={<ReserveForThirdPartyAndHolidayOffers />}
-            /> */}
             <Route
               path="share-a-ride"
               element={<RideShareReservationAndMore />}
@@ -105,51 +99,49 @@ const App = () => {
               path="rent-to-own"
               element={<RideShareReservationAndMore />}
             />
-            {/* <Route
-              path="See-latest-offers"
-              element={</>}
-            /> */}
-            {/*  routes for Vehicles */}
-
-            {/* <Route path="category" element={<AllVehicleCategory />} />
-            <Route path="All-vehicle-category" element={<VehicleCategory />} />
-
-            <Route
-              path="All-vehicle-category/:carsId"
-              element={<AllVehicleCategory />}
-            /> */}
-
             <Route path="/All-vehicle-category" element={<VehicleCategory />} />
-
             <Route
               path="/All-vehicle-category/:carsId"
               element={<AllVehicleCategory />}
             />
-
             <Route path="/our-vehicle-collection" element={<AvailableCars />} />
-
             <Route path="/our-vehicle-collection/:type" element={<Cars />} />
-
-            {/* <Route to="bookingForm" element={BookingForm} /> */}
-
             {/* //todo  forms */}
-
-            {/* <Route path="car-category/:userId" element={<CarMakeCategory />} /> */}
-            {/*  routes for locations */}
             <Route path="view-car-fleet" element={<CarFleet />} />
-            {/* landHam and laurel route to reserve car component */}
+
+            {/* //todo location */}
             <Route path="Lanham-MD" element={<StartCarReservation />} />
             <Route path="Laurel-MD" element={<StartCarReservation />} />
             <Route path="clarksville-TN" element={<CLarksvilleTennessee />} />
             <Route path="bloomington-MT" element={<BloomingtonMinnesota />} />
             <Route path="woodbridge-VA" element={<WoodbridgeVirginia />} />
-            {/*  routes for learn */}
+
+            {/* //todo learn */}
+            {/* safety routes */}
             <Route path="our-safety-policy" element={<Safety />} />
             <Route path="How-we-operate" element={<HowWeWork />} />
             <Route path="Our-offerings" element={<Services />} />
+            <Route path="accident-in-rental-car" element={<Accident />} />
             <Route
               path="holiday-offers"
               element={<ReserveForThirdPartyAndHolidayOffers />}
+            />
+
+            {/*Penalty */}
+            <Route path="our-safety-policy" element={<Safety />} />
+            <Route
+              path="holiday-offers"
+              element={<ReserveForThirdPartyAndHolidayOffers />}
+            />
+
+            {/* rental car repairs */}
+            <Route
+              path="who-pays-for-rental-car-repairs"
+              element={<Repairs />}
+            />
+            <Route
+              path="results-on-stolen-rental-car"
+              element={<RentalCarStolen />}
             />
             {/* this is the blogs */}
             <Route path="accident" element={<Accident />} />
