@@ -26,7 +26,6 @@ import CarCrashWithoutInsurance from "./pages/blogs/CarCrashWithoutInsurance";
 import DriverFault from "./pages/blogs/DriverFault";
 import AboutUs from "./pages/About/AboutUs";
 import CarFleet from "./pages/Vehicles/CarFleet";
-import VehicleCategory from "./pages/Vehicles/VehicleCategory";
 import StartCarReservation from "./pages/Reservations/StartCarReservation";
 import CarCrashKnowledge from "./pages/blogs/CarCrashKnowledge";
 import BestShortTerm from "./pages/blogs/BestShortTerm";
@@ -46,9 +45,9 @@ import Services from "./pages/Reservations/Services";
 import SellACar from "./pages/Business/SellACar";
 import UserDashboard from "./components/UserDashboard";
 import AllVehicleCategory from "./pages/Vehicles/AllVehicleCategory";
-import AvailableCars from "./pages/Vehicles/VehicleCategory";
-import Cars from "./components/ui/Header/NavBar-2/Cars";
+import Cars from "./pages/Vehicles/Cars";
 import ReserveForThirdPartyAndHolidayOffers from "./pages/Reservations/ReserveForThirdPartyAndHolidayOffers";
+import AvailableCars from "./pages/Vehicles/AvailableCars";
 // import BookingForm from "./components/Form/BookingForm";
 
 const App = () => {
@@ -99,7 +98,7 @@ const App = () => {
               path="rent-to-own"
               element={<RideShareReservationAndMore />}
             />
-            <Route path="/All-vehicle-category" element={<VehicleCategory />} />
+
             <Route
               path="/All-vehicle-category/:carsId"
               element={<AllVehicleCategory />}

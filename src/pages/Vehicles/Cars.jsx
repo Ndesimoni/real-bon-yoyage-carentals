@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { cars } from "../../../../DB/Local_Data_Base";
+import { cars } from "../../DB/Local_Data_Base";
 
 const NORMAL_PRICE = 100;
 
