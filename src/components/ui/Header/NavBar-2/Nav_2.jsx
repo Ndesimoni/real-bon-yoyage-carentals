@@ -28,8 +28,8 @@ function Nav_2() {
         <div className="absolute w-[100%] grid grid-cols-[70%_1fr] py-0.5">
           <div className=" bg-white h-[30vh] ">
             <ul className="  justify-evenly  gap-4 mt-4   ml-4 flex">
-              {data[activeLink].links.map((linkEl, i) => (
-                <div key={i}>
+              {data[activeLink].links.map((linkEl, index) => (
+                <div key={index}>
                   <h1 className="text-red-500 uppercase">{linkEl.heading}</h1>
 
                   <div>
@@ -38,7 +38,8 @@ function Nav_2() {
                         <NavLink
                           key={i}
                           to={
-                            data[activeLink].title === "Vehicles" && i > 2
+                            (data[activeLink].title === "Vehicles" && i) ||
+                            index > 0
                               ? `our-vehicle-collection/${linkItem}`
                               : linkItem
                           }
