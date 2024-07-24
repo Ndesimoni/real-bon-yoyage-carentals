@@ -73,30 +73,23 @@ export const nav_2_data = [
     links: [
       {
         heading: " Standard cars",
-        linkItems: [
-          "our-vehicle-collection",
-          "all-cars",
-          "suvs",
-          "vans",
-          "trucks",
-          "luxury-cars",
-        ],
+        linkItems: ["our-vehicle-collection", "suvs", "vans", "trucks"],
       },
       {
         heading: "Luxury cars",
-        linkItems: ["buy-car", "rent-car", "our-vehicle-collection"],
+        linkItems: ["luxury-cars"],
       },
       {
         heading: "Available suvs",
-        linkItems: ["all-cars", "suvs"],
+        linkItems: ["suvs"],
       },
       {
         heading: "Trucks",
-        linkItems: ["buy-car", "trucks", "luxury-cars"],
+        linkItems: ["trucks"],
       },
       {
         heading: "Vans",
-        linkItems: ["vans", "trucks", "luxury-cars"],
+        linkItems: ["vans", "trucks"],
       },
     ],
   },
@@ -375,6 +368,7 @@ export const cars = [
   {
     type: "car",
     image: "car-1.jpg",
+    description: "SUVs",
     name: "Hyundai Genesis Black",
     price: 120,
   },
@@ -870,21 +864,3 @@ export const vehicleCategory = [
     price: 75,
   },
 ];
-
-// [
-//   "accident-in-rental-car",
-//   "avoid-pay-deposit",
-//   "knowledge-on-car-crash",
-//   "what-to-know-on-car-crash-without-insurance",
-//   "crash-without-insurance",
-//   "insurance-importance",
-//   "out-of-state-overview",
-//   "how-to-pay-tolls",
-//   "effects-of-taking-rental-car-out-of-state",
-//   "results-on-stolen-rental-car",
-//   "who-pays-for-rental-car-repairs",
-//   "requirements-for-renting-car",
-//   "when-to-report-stolen-rental-vehicle",
-//   "best-car-companies-in-lanham",
-//   "best-short-term-car-rental-in-lanham",
-// ],

@@ -28,9 +28,11 @@ function Nav_2() {
         <div className="absolute w-[100%] grid grid-cols-[70%_1fr] py-0.5">
           <div className=" bg-white h-[30vh] ">
             <ul className="  justify-evenly  gap-4 mt-4   ml-4 flex">
-              {data[activeLink].links.map((linkEl, i) => (
-                <div key={i}>
-                  <h1 className="text-red-500 uppercase">{linkEl.heading}</h1>
+              {data[activeLink].links.map((linkEl, index) => (
+                <div key={index}>
+                  <h1 className="text-red-500 uppercase font-semibold">
+                    {linkEl.heading}
+                  </h1>
 
                   <div>
                     {linkEl.linkItems.map((linkItem, i) => {
@@ -38,14 +40,15 @@ function Nav_2() {
                         <NavLink
                           key={i}
                           to={
-                            data[activeLink].title === "Vehicles" && i > 2
+                            data[activeLink].title === "Vehicles" &&
+                            (i || index) > 0
                               ? `our-vehicle-collection/${linkItem}`
                               : linkItem
                           }
                         >
                           <li
                             onClick={() => setActiveLink(null)}
-                            className="hover:underline"
+                            className=" px-[2px] py-[1px] line-clamp-1 hover:text-red-500  hover:underline hover:px-1 hover:text-base text-sm capitalize"
                           >
                             {linkItem.replaceAll("-", " ")}
                           </li>
@@ -57,13 +60,12 @@ function Nav_2() {
               ))}
             </ul>
           </div>
-          <div className="h-[30vh  bg-slate-500">
-            <img
-              src={data?.[activeLink].img}
-              alt="drop down images"
-              className="object-cover"
-            />
-          </div>
+
+          <img
+            src={data?.[activeLink].img}
+            alt="drop down images"
+            className="object-fill h-[30vh] w-full"
+          />
         </div>
       )}
     </div>
