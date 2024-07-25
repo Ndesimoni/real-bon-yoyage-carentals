@@ -159,7 +159,13 @@ function ReservationDropdown() {
               onChange={handleChange}
             >
               {carMakeList.map((items, index) => (
-                <option key={index}>{items.category}</option>
+                <>
+                  <option value="" disabled selected hidden>
+                    Choose a drop oof location...
+                  </option>
+
+                  <option key={index}>{items.category}</option>
+                </>
               ))}
             </Select>
           </ItemStyle>
@@ -180,6 +186,9 @@ function ReservationDropdown() {
                 value={formData.pickUpLocation}
                 onChange={handleChange}
               >
+                <option value="" disabled selected hidden>
+                  Choose a pick up location...
+                </option>
                 <option>9500 Good Luck Road MD 20707</option>
                 <option>
                   7900 International Drive Suit 300 Bloomington MN 55425
@@ -214,6 +223,9 @@ function ReservationDropdown() {
               // value={formData.dropOffLocation}
               // onChange={handleChange}
               >
+                <option value="" disabled selected hidden>
+                  Choose a drop oof location...
+                </option>
                 <option>9500 Good Luck Road MD 20707</option>
                 <option>
                   7900 International Drive Suit 300 Bloomington MN 55425

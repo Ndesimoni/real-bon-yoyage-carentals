@@ -9,10 +9,10 @@ function Nav_2() {
 
   return (
     <div className="relative bg-black">
-      <ul className="grid grid-cols-6 items-center gap-[1px] ">
+      <ul className="grid grid-cols-6 items-center gap-[1px]">
         <li
           onClick={() => setActiveLink(null)}
-          className="bg-[#ebebebed] text-lg text-center cursor-pointer py-4 capitalize"
+          className="bg-[#ebebebed] text-lg text-center cursor-pointer py-5 capitalize "
         >
           <Link to="/">Home</Link>
         </li>

@@ -5,7 +5,7 @@ function Nav_2Items({ children, index, setActiveLink }) {
   return (
     <li
       onClick={handleClick}
-      className=" text-lg text-center cursor-pointer   py-4 capitalize  bg-[#ebebebed]"
+      className=" text-lg text-center cursor-pointer   py-5 capitalize  bg-[#ebebebed]"
     >
       {children}
     </li>

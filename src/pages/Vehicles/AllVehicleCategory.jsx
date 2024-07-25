@@ -1,47 +1,30 @@
-import { vehicleCategory } from "../../DB/Local_Data_Base";
-import { useParams, useSearchParams } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
+import { carTypeCategory } from "../../DB/Local_Data_Base";
+import VehicleCategoryType from "./AllVehicleCategoryContain";
+// import { useState } from "react";
 
-import SingleTextImageView from "../../components/ui/Reuseable_Ui/SingleTextImageView";
-import AllVehicleCategoryContain from "./AllVehicleCategoryContain";
+function AvailableCars() {
+  // incoming state from formDat
+  // let { state } = useLocation();
 
-function ALlCarMakeModels() {
-  const [queryUrl] = useSearchParams();
-  const { carsId } = useParams();
-  // const state = useLocation();
-  const activeUrl = queryUrl.get("to");
-
-  //  this handles the incoming route
-  const incomingPath =
-    activeUrl === null || activeUrl === undefined
-      ? carsId
-      : (activeUrl && carsId === null) || carsId === undefined
-        ? activeUrl
-        : carsId;
-
-  // console.log(incomingPath);
-  // console.log(state);
   return (
-    <>
-      <SingleTextImageView image="url(/help.jpg)">
-        <p> Alway Ready For Business</p>
-        <p className="text-yellow-50 text-lg capitalize"> sell your car</p>
-      </SingleTextImageView>
+    <main className="  bg-gray-100 flex justify-center items-center">
+      <div className="w-[1200px] mx-auto ">
+        <h1 className="text-3xl font-semibold pt-10 capitalize">
+          {/* {`Available ${state.} Cars for Rental, Sizes and Models`} */}
+        </h1>
 
-      <div className="flex justify-center items-center">
-        <div className="grid grid-cols-3 gap-20 mt-10 w-[1200px]">
-          {vehicleCategory
-            .filter(
-              (selectedCategory) =>
-                (selectedCategory =
-                  selectedCategory.description === incomingPath)
-            )
-            .map((car, index) => (
-              <AllVehicleCategoryContain car={car} key={index} />
-            ))}
-        </div>
+        {carTypeCategory.map((category, index) => (
+          <VehicleCategoryType
+            key={index}
+            description={category.description}
+            carImage={category.carImage}
+            categoryName={category.title}
+          />
+        ))}
       </div>
-    </>
+    </main>
   );
 }
 
-export default ALlCarMakeModels;
+export default AvailableCars;

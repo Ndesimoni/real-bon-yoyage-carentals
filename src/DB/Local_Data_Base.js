@@ -603,7 +603,6 @@ export const FooterItems = [
 
 //todo  car make list
 export const carMakeList = [
-  { category: " " },
   { category: "SUVs" },
   { category: "Luxury-Cars" },
   { category: "Economy-Cars" },

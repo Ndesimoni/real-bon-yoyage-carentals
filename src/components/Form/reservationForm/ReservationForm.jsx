@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { CiCircleQuestion } from "react-icons/ci";
-
-import ReservationDropdown from "./ReservationDropdown";
 import { useEffect, useState } from "react";
 import Button from "../../ui/Reuseable_Ui/Button";
+import ReservationDropdown from "./ReservationDropdown";
 
 const ReservationFormStyles = styled.div({
   backgroundColor: "white",
@@ -37,11 +36,30 @@ const ReservationForm = () => {
       <h1 className="font-extrabold text-4xl py-5">Reserve a Vehicle</h1>
       <label className="flex items-center justify-between ">
         <p className="font-semibold text-sm">
-          Pic-up & Return Location (ZIP,City or Airport)*
+          Pic-up & Return Location ( City, State or Airport )*
         </p>
         <span className="text-red-600 italic"> * Required Field</span>
       </label>
 
+      <select
+        name=""
+        id=""
+        className="w-full h-10 border-gray-200 border placeholder:pl-4 px-5"
+        type="text"
+        placeholder="Click to start a reservation"
+        onClick={() => {
+          setShowReservationForm(true);
+        }}
+      >
+        <option value="" disabled selected hidden>
+          Choose a state of operation...
+        </option>
+        <option value=""> marryland</option>
+        <option value=""> minnesota</option>
+        <option value=""> tennessee</option>
+        <option value=""> virginia</option>
+      </select>
+      {/* 
       <input
         role="button"
         className="w-full h-10 border-gray-200 border placeholder:pl-4"
@@ -51,7 +69,7 @@ const ReservationForm = () => {
         onClick={() => {
           setShowReservationForm(true);
         }}
-      />
+      /> */}
 
       {/* //todo // this is for the both dropdowns   */}
       {/* this is the dropdown */}

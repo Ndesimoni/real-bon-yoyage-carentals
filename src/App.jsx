@@ -26,7 +26,7 @@ import CarCrashWithoutInsurance from "./pages/blogs/CarCrashWithoutInsurance";
 import DriverFault from "./pages/blogs/DriverFault";
 import AboutUs from "./pages/About/AboutUs";
 import CarFleet from "./pages/Vehicles/CarFleet";
-import VehicleCategory from "./pages/Vehicles/VehicleCategory";
+import VehicleCategory from "./pages/Vehicles/AllVehicleCategory";
 import StartCarReservation from "./pages/Reservations/StartCarReservation";
 import CarCrashKnowledge from "./pages/blogs/CarCrashKnowledge";
 import BestShortTerm from "./pages/blogs/BestShortTerm";
@@ -45,8 +45,8 @@ import Contact from "./components/Contact";
 import Services from "./pages/Reservations/Services";
 import SellACar from "./pages/Business/SellACar";
 import UserDashboard from "./components/UserDashboard";
-import AllVehicleCategory from "./pages/Vehicles/AllVehicleCategory";
-import AvailableCars from "./pages/Vehicles/VehicleCategory";
+import AllVehicleCategory from "./pages/Vehicles/Vehicle";
+import AvailableCars from "./pages/Vehicles/AllVehicleCategory";
 import Cars from "./components/ui/Header/NavBar-2/Cars";
 import ReserveForThirdPartyAndHolidayOffers from "./pages/Reservations/ReserveForThirdPartyAndHolidayOffers";
 // import BookingForm from "./components/Form/BookingForm";
@@ -112,7 +112,10 @@ const App = () => {
             {/* //todo location */}
             <Route path="Lanham-MD" element={<StartCarReservation />} />
             <Route path="Laurel-MD" element={<StartCarReservation />} />
+
             <Route path="clarksville-TN" element={<CLarksvilleTennessee />} />
+            <Route path="clarksville-TN/:id" element={<VehicleCategory />} />
+
             <Route path="bloomington-MT" element={<BloomingtonMinnesota />} />
             <Route path="woodbridge-VA" element={<WoodbridgeVirginia />} />
 
