@@ -15,6 +15,7 @@ const ReservationFormStyles = styled.div({
 const ReservationForm = () => {
   const [showReservationForm, setShowReservationForm] = useState(false);
   const [bookAsGuestForm, SetBookAsGuestForm] = useState(false);
+  const [showInformation, setShowInformation] = useState(false);
 
   function handleClick(e) {
     const closestParent = e.target.closest("form");
@@ -23,6 +24,7 @@ const ReservationForm = () => {
   }
 
   function GuestReservation() {
+    console.log("hello");
     SetBookAsGuestForm(!false);
   }
 
@@ -30,6 +32,10 @@ const ReservationForm = () => {
     document.body.addEventListener("click", handleClick, true);
     return () => document.body.removeEventListener("click", handleClick);
   }, [showReservationForm]);
+
+  function onHandleInformation() {
+    setShowInformation(!showInformation);
+  }
 
   return (
     <ReservationFormStyles>
@@ -83,7 +89,16 @@ const ReservationForm = () => {
           <Button>book as guest</Button>
         </div>
 
-        <div>
+        <div onClick={onHandleInformation} className="relative">
+          {showInformation && (
+            <div className="absolute bottom-5 w-80 ml-5 bg-blue-300 p-6 rounded-r-full rounded-t-full">
+              <p>
+                booking as guest is for everyone, want to enjoy our amazing
+                discount and offers ?
+                <strong>please create and account to enjoy our discount</strong>{" "}
+              </p>
+            </div>
+          )}
           <CiCircleQuestion size={20} color="green" />
         </div>
       </div>
