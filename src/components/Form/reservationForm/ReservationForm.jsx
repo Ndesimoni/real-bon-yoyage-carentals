@@ -24,7 +24,6 @@ const ReservationForm = () => {
   }
 
   function GuestReservation() {
-    console.log("hello");
     SetBookAsGuestForm(!false);
   }
 
@@ -91,7 +90,7 @@ const ReservationForm = () => {
 
         <div onClick={onHandleInformation} className="relative">
           {showInformation && (
-            <div className="absolute bottom-5 w-80 ml-5 bg-blue-300 p-6 rounded-r-full rounded-t-full">
+            <div className="absolute bottom-5 w-80 ml-5 bg-blue-300 p-6 rounded-r-full rounded-t-full ">
               <p>
                 booking as guest is for everyone, want to enjoy our amazing
                 discount and offers ?
