@@ -1,21 +1,13 @@
 import { vehicleCategory } from "../../DB/Local_Data_Base";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import SingleTextImageView from "../../components/ui/Reuseable_Ui/SingleTextImageView";
 import VehicleContain from "./VehicleContain";
 
 function Vehicle() {
-  const [queryUrl] = useSearchParams();
   const { carsId } = useParams();
-  const activeUrl = queryUrl.get("to");
-
-  //  this handles the incoming route
-  const incomingPath =
-    activeUrl === null || activeUrl === undefined
-      ? carsId
-      : (activeUrl && carsId === null) || carsId === undefined
-        ? activeUrl
-        : carsId;
+  const incomingPath = carsId;
+  console.log(incomingPath);
 
   return (
     <>

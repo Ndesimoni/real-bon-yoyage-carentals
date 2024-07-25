@@ -26,7 +26,7 @@ import CarCrashWithoutInsurance from "./pages/blogs/CarCrashWithoutInsurance";
 import DriverFault from "./pages/blogs/DriverFault";
 import AboutUs from "./pages/About/AboutUs";
 import CarFleet from "./pages/Vehicles/CarFleet";
-import VehicleCategory from "./pages/Vehicles/AllVehicleCategory";
+import AllVehicleCategory from "./pages/Vehicles/AllVehicleCategory";
 import StartCarReservation from "./pages/Reservations/StartCarReservation";
 import CarCrashKnowledge from "./pages/blogs/CarCrashKnowledge";
 import BestShortTerm from "./pages/blogs/BestShortTerm";
@@ -45,10 +45,10 @@ import Contact from "./components/Contact";
 import Services from "./pages/Reservations/Services";
 import SellACar from "./pages/Business/SellACar";
 import UserDashboard from "./components/UserDashboard";
-import AllVehicleCategory from "./pages/Vehicles/Vehicle";
 import AvailableCars from "./pages/Vehicles/AllVehicleCategory";
 import Cars from "./components/ui/Header/NavBar-2/Cars";
 import ReserveForThirdPartyAndHolidayOffers from "./pages/Reservations/ReserveForThirdPartyAndHolidayOffers";
+import Vehicle from "./pages/Vehicles/Vehicle";
 // import BookingForm from "./components/Form/BookingForm";
 
 const App = () => {
@@ -99,10 +99,13 @@ const App = () => {
               path="rent-to-own"
               element={<RideShareReservationAndMore />}
             />
-            <Route path="/All-vehicle-category" element={<VehicleCategory />} />
+            <Route
+              path="/All-vehicle-category"
+              element={<AllVehicleCategory />}
+            />
             <Route
               path="/All-vehicle-category/:carsId"
-              element={<AllVehicleCategory />}
+              element={<Vehicle />} //todo this needs to be studied
             />
             <Route path="/our-vehicle-collection" element={<AvailableCars />} />
             <Route path="/our-vehicle-collection/:type" element={<Cars />} />
@@ -114,7 +117,8 @@ const App = () => {
             <Route path="Laurel-MD" element={<StartCarReservation />} />
 
             <Route path="clarksville-TN" element={<CLarksvilleTennessee />} />
-            <Route path="clarksville-TN/:id" element={<VehicleCategory />} />
+            {/* //todo this needs to be studied  still got some lakings*/}
+            {/* <Route path="clarksville-TN/:id" element={<AllVehicleCategory />} /> */}
 
             <Route path="bloomington-MT" element={<BloomingtonMinnesota />} />
             <Route path="woodbridge-VA" element={<WoodbridgeVirginia />} />
@@ -195,31 +199,5 @@ const App = () => {
     </div>
   );
 };
-
-// const route = createBrowserRouter([
-//   {
-//     element: <AppLayOut />,
-//     children: [
-//       {
-//         path: "/",
-//         element: <HomePage />,
-//       },
-
-//       {
-//         path: "F-A-Q",
-//         element: <HelpInfo />,
-//       },
-
-//       {
-//         path: "find-a-location",
-//         element: <Map />,
-//       },
-//     ],
-//   },
-// ]);
-
-// export const App = () => {
-//   return <RouterProvider router={route} />;
-// };
 
 export default App;

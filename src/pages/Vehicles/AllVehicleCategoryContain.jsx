@@ -18,6 +18,7 @@ const VehicleContain = ({ type, categoryName, description, carImage, id }) => {
           <IoPeopleOutline className="opacity-50 text-xl" color="red" />
           <span>{type === "Vans" ? "8-12" : "4-5"} People</span>
         </p>
+
         <p className="flex gap-2 items-center mb-3">
           <IoBagOutline className="opacity-50 text-xl" color="red" />
           <span>{type === "Vans" ? "7-10" : "2-5"} Bags</span>
