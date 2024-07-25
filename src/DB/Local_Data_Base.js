@@ -73,7 +73,7 @@ export const nav_2_data = [
     links: [
       {
         heading: " Standard cars",
-        linkItems: ["our-vehicle-collection", "suvs", "Trucks", "Premium-Cars"],
+        linkItems: ["our-vehicle-collection", "suvs", "trucks", "Premium-Cars"],
       },
       {
         heading: "Luxury cars",
@@ -463,7 +463,7 @@ export const cars = [
   {
     type: "car",
     image: "car-7.jpg",
-    description: "luxury",
+    description: "Premium-Cars",
     name: "Mustang Premium",
     price: 100,
   },

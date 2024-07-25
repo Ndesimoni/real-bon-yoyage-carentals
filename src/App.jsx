@@ -45,7 +45,6 @@ import Contact from "./components/Contact";
 import Services from "./pages/Reservations/Services";
 import SellACar from "./pages/Business/SellACar";
 import UserDashboard from "./components/UserDashboard";
-import AvailableCars from "./pages/Vehicles/AllVehicleCategory";
 import Cars from "./components/ui/Header/NavBar-2/Cars";
 import ReserveForThirdPartyAndHolidayOffers from "./pages/Reservations/ReserveForThirdPartyAndHolidayOffers";
 import Vehicle from "./pages/Vehicles/Vehicle";
@@ -107,7 +106,10 @@ const App = () => {
               path="/All-vehicle-category/:carsId"
               element={<Vehicle />} //todo this needs to be studied
             />
-            <Route path="/our-vehicle-collection" element={<AvailableCars />} />
+            <Route
+              path="/our-vehicle-collection"
+              element={<AllVehicleCategory />}
+            />
             <Route path="/our-vehicle-collection/:type" element={<Cars />} />
             {/* //todo  forms */}
             <Route path="view-car-fleet" element={<CarFleet />} />

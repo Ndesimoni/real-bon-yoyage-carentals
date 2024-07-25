@@ -161,7 +161,7 @@ function ReservationDropdown() {
               {carMakeList.map((items, index) => (
                 <>
                   <option value="" disabled selected hidden>
-                    Choose a drop oof location...
+                    Choose a vehicle category ...
                   </option>
 
                   <option key={index}>{items.category}</option>
