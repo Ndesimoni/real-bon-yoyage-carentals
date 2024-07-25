@@ -1,11 +1,20 @@
 import { CarFleetSVGs } from "../../DB/Local_Data_Base";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CarFleet = () => {
   const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   const thePath = window.location.pathname;
+  //   console.log(thePath);
+  // }, []);
+
   function handleSubmit(activeFleet) {
-    navigate(`category?to=${activeFleet}`);
-    // console.log(activeFleet);
+    navigate(`All-vehicle-category/${activeFleet}`);
+  }
+
+  function allVehicleCategory() {
+    navigate(`All-vehicle-category`);
   }
 
   return (
@@ -33,12 +42,12 @@ const CarFleet = () => {
       </div>
 
       <div className="flex justify-center items-center py-5">
-        <Link
-          to="All-vehicle-category"
+        <button
+          onClick={allVehicleCategory}
           className="header_2 capitalize text-xl text-white bg-stone-900 py-2 px-4 rounded-lg hover:opacity-80 transition-all hover:bg-red-600 hover:text-black"
         >
           <h2> View all Vehicle</h2>
-        </Link>
+        </button>
       </div>
     </div>
   );

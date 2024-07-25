@@ -9,10 +9,10 @@ function Nav_2() {
 
   return (
     <div className="relative bg-black">
-      <ul className="grid grid-cols-6 items-center gap-[1px] ">
+      <ul className="grid grid-cols-6 items-center gap-[1px]">
         <li
           onClick={() => setActiveLink(null)}
-          className="bg-[#ebebebed] text-lg text-center cursor-pointer py-4 capitalize"
+          className="bg-[#ebebebed] text-lg text-center cursor-pointer py-5 capitalize "
         >
           <Link to="/">Home</Link>
         </li>
@@ -30,7 +30,9 @@ function Nav_2() {
             <ul className="  justify-evenly  gap-4 mt-4   ml-4 flex">
               {data[activeLink].links.map((linkEl, index) => (
                 <div key={index}>
-                  <h1 className="text-red-500 uppercase">{linkEl.heading}</h1>
+                  <h1 className="text-red-500 uppercase font-semibold">
+                    {linkEl.heading}
+                  </h1>
 
                   <div>
                     {linkEl.linkItems.map((linkItem, i) => {
@@ -46,7 +48,7 @@ function Nav_2() {
                         >
                           <li
                             onClick={() => setActiveLink(null)}
-                            className="hover:underline"
+                            className=" px-[2px] py-[1px] line-clamp-1 hover:text-red-500  hover:underline hover:px-1 hover:text-base text-sm capitalize"
                           >
                             {linkItem.replaceAll("-", " ")}
                           </li>
@@ -58,13 +60,12 @@ function Nav_2() {
               ))}
             </ul>
           </div>
-          <div className="h-[30vh  bg-slate-500">
-            <img
-              src={data?.[activeLink].img}
-              alt="drop down images"
-              className="object-cover"
-            />
-          </div>
+
+          <img
+            src={data?.[activeLink].img}
+            alt="drop down images"
+            className="object-fill h-[30vh] w-full"
+          />
         </div>
       )}
     </div>

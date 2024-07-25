@@ -107,6 +107,10 @@
   .header_3 {
     @apply mb-4 flex items-center  text-red-600 cursor-pointer font-semibold;
   }
+
+  .booking_btn {
+    @apply bg-red-500 text-white uppercase hover:bg-stone-900 hover:text-red-500 transition-all p-2 rounded-sm text-xs;
+  }
 }
 
 .leaflet-container {

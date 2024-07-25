@@ -73,30 +73,24 @@ export const nav_2_data = [
     links: [
       {
         heading: " Standard cars",
-        linkItems: [
-          "our-vehicle-collection",
-          "all-cars",
-          "suvs",
-          "vans",
-          "trucks",
-          "luxury-cars",
-        ],
+        linkItems: ["our-vehicle-collection", "suvs", "Trucks", "Premium-Cars"],
       },
       {
         heading: "Luxury cars",
-        linkItems: ["buy-car", "rent-car", "our-vehicle-collection"],
+        linkItems: ["luxury-cars"],
       },
       {
         heading: "Available suvs",
-        linkItems: ["all-cars", "suvs"],
+        linkItems: ["suvs"],
       },
       {
         heading: "Trucks",
-        linkItems: ["buy-car", "trucks", "luxury-cars"],
+        linkItems: ["trucks"],
       },
+
       {
-        heading: "Vans",
-        linkItems: ["vans", "trucks", "luxury-cars"],
+        heading: "Premium-Cars",
+        linkItems: ["premium-cars"],
       },
     ],
   },
@@ -266,12 +260,12 @@ export const navBar2Data = [
     header: [
       {
         title: "Standard Cars",
-        items: ["Compact-Cars", "Standard-Cars", "Intermediate-Cars"],
+        items: ["Standard-Cars"],
       },
 
       {
         title: "Luxury Cars",
-        items: ["Luxury-Cars", "Premium-Cars", "Sports-cars"],
+        items: ["Luxury-Cars", "Premium-Cars"],
       },
 
       {
@@ -285,8 +279,8 @@ export const navBar2Data = [
       },
 
       {
-        title: "Vans",
-        items: ["Available-Vans", "Full Size-Cars"],
+        title: "Premium Cars",
+        items: ["Premium-Cars"],
       },
     ],
   },
@@ -375,6 +369,7 @@ export const cars = [
   {
     type: "car",
     image: "car-1.jpg",
+    description: "SUVs",
     name: "Hyundai Genesis Black",
     price: 120,
   },
@@ -553,27 +548,26 @@ export const cars = [
 
 export const CarFleetSVGs = [
   {
-    title: "Pickup-Trucks",
-    image: "./car-fleet-svgs-pictures/bonvoyage-trucks-cars.avif",
-  },
-
-  {
     title: "Standard-Cars",
     image: "./car-fleet-svgs-pictures/bonvoyage-compact-nissan-cars.avif",
-  },
-
-  {
-    title: "SUVs",
-    image: "./car-fleet-svgs-pictures/bovoyage-suvs.avif",
   },
 
   {
     title: "Luxury-Cars",
     image: "./car-fleet-svgs-pictures/bonvoyage-luxury-cars.avif",
   },
+  {
+    title: "SUVs",
+    image: "./car-fleet-svgs-pictures/bovoyage-suvs.avif",
+  },
 
   {
-    title: "Full-Size-Cars",
+    title: "Premium-Cars",
+    image: "./car-fleet-svgs-pictures/bonvoyage-luxury-cars.avif",
+  },
+
+  {
+    title: "Economy-Cars",
     image: "./car-fleet-svgs-pictures/bonvoyage-van-cars.avif",
   },
 ];
@@ -609,15 +603,15 @@ export const FooterItems = [
 
 //todo  car make list
 export const carMakeList = [
-  { category: " " },
   { category: "SUVs" },
   { category: "Luxury-Cars" },
   { category: "Economy-Cars" },
   { category: "Standard-Cars" },
-  { category: "Full Size-Cars" },
-  { category: "Compact-Cars" },
-  { category: "Intermediate-Cars" },
+  // { category: "Full Size-Cars" },
+  // { category: "Compact-Cars" },
+  // { category: "Intermediate-Cars" },
   { category: "Premium-Cars" },
+  { category: "Trucks" },
 ];
 
 //todo ///////////////////////////////////////////////////////
@@ -716,19 +710,21 @@ export const vehicleCategory = [
   {
     type: "car",
     image: "car-4.jpg",
+    description: "Standard-Cars",
     name: "Suzuki Kizashi Silver",
     price: 70,
   },
   {
     type: "car",
     image: "car-5.jpg",
-    description: "luxury",
+    description: "Standard-Cars",
     name: "Subaru Legacy Premium",
     price: 70,
   },
   {
     type: "car",
     image: "car-13.jpg",
+    description: "Economy-Cars",
     name: "Toyota Corolla White",
     price: 80,
   },
@@ -736,7 +732,7 @@ export const vehicleCategory = [
     type: "suv",
     image: "suv-2.jpg",
     name: "Dodge Grand Caravan Red",
-    description: "Economy",
+    description: "Economy-Cars",
     price: 100,
   },
   {
@@ -784,31 +780,36 @@ export const vehicleCategory = [
   {
     type: "car",
     image: "car-6.jpg",
+    description: "Standard-Cars",
     name: "Hyundai Elantra Grey",
     price: 80,
   },
+
   {
     type: "car",
     image: "car-7.jpg",
-
+    description: "Premium-Cars",
     name: "Mustang Premium",
     price: 100,
   },
   {
     type: "car",
     image: "car-8.jpg",
+    description: "Luxury-Cars",
     name: "SXT Dodge Charger",
     price: 120,
   },
   {
     type: "suv",
     image: "suv-9.jpg",
+    description: "SUVs",
     name: "Ford Escape Sport",
     price: 80,
   },
   {
     type: "car",
     image: "car-9.jpg",
+    description: "Premium-Cars",
     name: "SXT Dodge Challenger",
     price: 150,
   },
@@ -819,6 +820,7 @@ export const vehicleCategory = [
     name: "Mercedes Gle black",
     price: 200,
   },
+
   {
     type: "suv",
     image: "suv-11.jpg",
@@ -826,15 +828,18 @@ export const vehicleCategory = [
     name: "Mercedes Gle White",
     price: 160,
   },
+
   {
     type: "car",
     image: "car-10.jpg",
+    description: "Economy-Cars",
     name: "Toyota Camry Black",
     price: 89,
   },
   {
     type: "car",
     image: "car-11.jpg",
+    description: "Standard-Cars",
     name: "Buick Lacrosse Black",
     price: 140,
   },
@@ -848,12 +853,14 @@ export const vehicleCategory = [
   {
     type: "suv",
     image: "suv-12.jpg",
+    description: "Luxury-Cars",
     name: "Ford Focus Black",
     price: 70,
   },
   {
     type: "truck",
     image: "truck-1.jpg",
+    description: "Trucks",
     name: "Dodge Dakota Red",
     price: 100,
   },
@@ -861,30 +868,14 @@ export const vehicleCategory = [
     type: "suv",
     image: "suv-13.jpg",
     name: "Nissan Rogue White",
+    description: "SUVs",
     price: 80,
   },
   {
     type: "car",
     image: "car-16.jpg",
+    description: "Economy-Cars",
     name: "Toyota Venza",
     price: 75,
   },
 ];
-
-// [
-//   "accident-in-rental-car",
-//   "avoid-pay-deposit",
-//   "knowledge-on-car-crash",
-//   "what-to-know-on-car-crash-without-insurance",
-//   "crash-without-insurance",
-//   "insurance-importance",
-//   "out-of-state-overview",
-//   "how-to-pay-tolls",
-//   "effects-of-taking-rental-car-out-of-state",
-//   "results-on-stolen-rental-car",
-//   "who-pays-for-rental-car-repairs",
-//   "requirements-for-renting-car",
-//   "when-to-report-stolen-rental-vehicle",
-//   "best-car-companies-in-lanham",
-//   "best-short-term-car-rental-in-lanham",
-// ],
