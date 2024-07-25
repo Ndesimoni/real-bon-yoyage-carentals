@@ -38,8 +38,8 @@ function Nav_2() {
                         <NavLink
                           key={i}
                           to={
-                            (data[activeLink].title === "Vehicles" && i) ||
-                            index > 0
+                            data[activeLink].title === "Vehicles" &&
+                            (i || index) > 0
                               ? `our-vehicle-collection/${linkItem}`
                               : linkItem
                           }
