@@ -46,6 +46,8 @@ function Nav_2() {
                     {linkEl.heading}
                   </h1>
                   <div>
+
+                    {/* //todo this is linking to all-vehicle-category or to the corresponding link element */}
                     {linkEl.linkItems.map((linkItem, i) => {
                       return (
                         <div key={i} onClick={() => handleNavigate(linkItem)}>

@@ -1,19 +1,17 @@
-// import { useLocation } from "react-router-dom";
+
 import { carTypeCategory } from "../../DB/Local_Data_Base";
 import AllVehicleCategoryContain from "./AllVehicleCategoryContain";
-// import { useState } from "react";
+
 
 function AllVehicleCategory() {
-  // incoming state from formDat
-  // let { state } = useLocation();
 
   return (
     <main className="  bg-gray-100 flex justify-center items-center">
       <div className="w-[1200px] mx-auto ">
         <h1 className="text-3xl font-semibold pt-10 capitalize">
-          {/* {`Available ${state.} Cars for Rental, Sizes and Models`} */}
         </h1>
 
+        {/* //todo this is going to all vehicle category */}
         {carTypeCategory.map((category, index) => (
           <AllVehicleCategoryContain
             key={index}

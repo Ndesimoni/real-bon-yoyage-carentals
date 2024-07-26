@@ -8,7 +8,6 @@ const AllVehicleCategoryContain = ({
   carImage,
   id,
 }) => {
-  // const navigate = useNavigate();
 
   return (
     <div
