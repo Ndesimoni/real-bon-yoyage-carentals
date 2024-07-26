@@ -375,7 +375,7 @@ export const cars = [
   },
 
   {
-    type: "car",
+    type: "premium",
     image: "car-2.jpg",
     description: "luxury",
     name: "Chevrolet Camaro Convertible Yellow",
@@ -398,7 +398,7 @@ export const cars = [
     type: "car",
     image: "car-5.jpg",
     description: "luxury",
-    name: "Subaru Legacy Premium",
+    name: "Subaru Legacy ",
     price: 70,
   },
   {
@@ -461,7 +461,7 @@ export const cars = [
     price: 80,
   },
   {
-    type: "car",
+    type: "premium",
     image: "car-7.jpg",
     description: "Premium-Cars",
     name: "Mustang Premium",
@@ -531,7 +531,7 @@ export const cars = [
     price: 100,
   },
   {
-    type: "suv",
+    type: "premium",
     image: "suv-13.jpg",
     name: "Nissan Rogue White",
     price: 80,
