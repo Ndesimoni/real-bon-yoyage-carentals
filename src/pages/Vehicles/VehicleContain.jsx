@@ -1,5 +1,7 @@
 const VehicleContain = ({ car }) => {
-  function onHandleBooking() {}
+  function onHandleBooking() {
+    console.log("hello world", car.name);
+  }
 
   return (
     <div className="shadow-lg relative">

@@ -1,11 +1,21 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Nav_2Items from "./Nav_2Items";
 import { nav_2_data as data } from "../../../../DB/Local_Data_Base";
 
 function Nav_2() {
   const [activeLink, setActiveLink] = useState(null);
+  const navigate = useNavigate();
+
+  function handleNavigate(linkItem) {
+    navigate(
+      data[activeLink].title === "Vehicles"
+        ? `all-vehicle-category/${linkItem}`
+        : linkItem,
+      { state: linkItem }
+    );
+  }
 
   return (
     <div className="relative bg-black">
@@ -33,18 +43,12 @@ function Nav_2() {
                   <h1 className="text-red-500 uppercase font-semibold">
                     {linkEl.heading}
                   </h1>
-
                   <div>
                     {linkEl.linkItems.map((linkItem, i) => {
                       return (
-                        <NavLink
+                        <div
                           key={i}
-                          to={
-                            data[activeLink].title === "Vehicles" &&
-                            (i || index) > 0
-                              ? `our-vehicle-collection/${linkItem}`
-                              : linkItem
-                          }
+                          onClick={() => handleNavigate(linkItem, i, index)}
                         >
                           <li
                             onClick={() => setActiveLink(null)}
@@ -52,7 +56,24 @@ function Nav_2() {
                           >
                             {linkItem.replaceAll("-", " ")}
                           </li>
-                        </NavLink>
+                        </div>
+
+                        // <NavLink
+                        //   key={i}
+                        //   to={
+                        //     data[activeLink].title === "Vehicles" &&
+                        //     (i || index) > 0
+                        //       ? `our-vehicle-collection/${linkItem}`
+                        //       : linkItem
+                        //   }
+                        // >
+                        //   <li
+                        //     onClick={() => setActiveLink(null)}
+                        //     className=" px-[2px] py-[1px] line-clamp-1 hover:text-red-500  hover:underline hover:px-1 hover:text-base text-sm capitalize"
+                        //   >
+                        //     {linkItem.replaceAll("-", " ")}
+                        //   </li>
+                        // </NavLink>
                       );
                     })}
                   </div>

@@ -45,7 +45,7 @@ import Contact from "./components/Contact";
 import Services from "./pages/Reservations/Services";
 import SellACar from "./pages/Business/SellACar";
 import UserDashboard from "./components/UserDashboard";
-import Cars from "./components/ui/Header/NavBar-2/Cars";
+// import Cars from "./components/ui/Header/NavBar-2/Cars";
 import ReserveForThirdPartyAndHolidayOffers from "./pages/Reservations/ReserveForThirdPartyAndHolidayOffers";
 import Vehicle from "./pages/Vehicles/Vehicle";
 // import BookingForm from "./components/Form/BookingForm";
@@ -99,18 +99,18 @@ const App = () => {
               element={<RideShareReservationAndMore />}
             />
             <Route
-              path="/All-vehicle-category"
+              path="/all-vehicle-category"
               element={<AllVehicleCategory />}
             />
             <Route
-              path="/All-vehicle-category/:carsId"
+              path="/all-vehicle-category/:carsId"
               element={<Vehicle />} //todo this needs to be studied
             />
-            <Route
+            {/* <Route
               path="/our-vehicle-collection"
               element={<AllVehicleCategory />}
-            />
-            <Route path="/our-vehicle-collection/:type" element={<Cars />} />
+            /> */}
+            {/* <Route path="/our-vehicle-collection/:type" element={<Cars />} /> */}
             {/* //todo  forms */}
             <Route path="view-car-fleet" element={<CarFleet />} />
 

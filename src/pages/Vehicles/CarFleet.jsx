@@ -4,15 +4,11 @@ import { useNavigate } from "react-router-dom";
 const CarFleet = () => {
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   const thePath = window.location.pathname;
-  //   console.log(thePath);
-  // }, []);
-
   function handleSubmit(activeFleet) {
-    navigate(`All-vehicle-category/${activeFleet}`);
+    navigate(`All-vehicle-category/${activeFleet}`, { state: activeFleet });
   }
 
+  //todo this is navigating to the all allVehicleCategory component
   function allVehicleCategory() {
     navigate(`All-vehicle-category`);
   }
@@ -24,6 +20,7 @@ const CarFleet = () => {
       </div>
 
       <div className="flex  ">
+        {/* //todo data from data base */}
         {CarFleetSVGs.map((items, index) => (
           <div
             key={index}

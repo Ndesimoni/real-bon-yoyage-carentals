@@ -49,7 +49,7 @@ const ReservationForm = () => {
       <select
         name=""
         id=""
-        className="w-full h-10 border-gray-200 border placeholder:pl-4 px-5"
+        className="w-full h-10 border-gray-200 border placeholder:pl-4 px-5 appearance-none"
         type="text"
         placeholder="Click to start a reservation"
         onClick={() => {
@@ -83,22 +83,44 @@ const ReservationForm = () => {
       {/* this is the for book as gust dropdown */}
       <div> {bookAsGuestForm && <ReservationDropdown />}</div>
 
-      <div className="flex items-center gap-1 text-sm mt-5 mb-5 ">
-        <div className="flex gap-2" onClick={GuestReservation}>
-          <Button>book as guest</Button>
+      <div className="flex justify-between items-center">
+        <div className="flex items-center gap-1 text-sm mt-5 mb-5 ">
+          <div className="flex gap-2" onClick={GuestReservation}>
+            <Button>book as guest</Button>
+          </div>
+
+          <div onClick={onHandleInformation} className="relative">
+            {showInformation && (
+              <div className="absolute bottom-5 w-80 ml-5 bg-blue-300 p-6 rounded-r-full rounded-t-full ">
+                <p>
+                  booking as guest is for everyone, want to enjoy our amazing
+                  discount and offers ?
+                  <strong>
+                    please create and account to enjoy our discount
+                  </strong>{" "}
+                </p>
+              </div>
+            )}
+            <CiCircleQuestion size={20} color="green" />
+          </div>
         </div>
 
-        <div onClick={onHandleInformation} className="relative">
-          {showInformation && (
-            <div className="absolute bottom-5 w-80 ml-5 bg-blue-300 p-6 rounded-r-full rounded-t-full ">
-              <p>
-                booking as guest is for everyone, want to enjoy our amazing
-                discount and offers ?
-                <strong>please create and account to enjoy our discount</strong>{" "}
-              </p>
-            </div>
-          )}
-          <CiCircleQuestion size={20} color="green" />
+        <div className="text-xs text-white p-1">
+          <button className="border border-r-none px-2 py-1 bg-red-500 font-semibold ring-offset ring-1 ">
+            Search
+          </button>
+          <select
+            name=""
+            id=""
+            className="appearance-none border p-1  bg-green-600 text-xs "
+          >
+            <option value="" disabled selected hidden>
+              {" "}
+              Choose Categories
+            </option>
+            <option value="">all cars</option>
+            <option value=""> Car Categories</option>
+          </select>
         </div>
       </div>
     </ReservationFormStyles>

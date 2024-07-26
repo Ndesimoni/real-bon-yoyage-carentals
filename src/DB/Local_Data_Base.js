@@ -73,24 +73,30 @@ export const nav_2_data = [
     links: [
       {
         heading: " Standard cars",
-        linkItems: ["our-vehicle-collection", "suvs", "trucks", "Premium-Cars"],
+        linkItems: [
+          // "suvs",
+          // "trucks",
+          "SUVs",
+          "Trucks",
+          "Premium-Cars",
+        ],
       },
       {
         heading: "Luxury cars",
-        linkItems: ["luxury-cars"],
+        linkItems: ["Luxury-Cars"],
       },
       {
         heading: "Available suvs",
-        linkItems: ["suvs"],
+        linkItems: ["SUVs"],
       },
       {
         heading: "Trucks",
-        linkItems: ["trucks"],
+        linkItems: ["Trucks"],
       },
 
       {
         heading: "Premium-Cars",
-        linkItems: ["premium-cars"],
+        linkItems: ["Premium-Cars"],
       },
     ],
   },
@@ -180,187 +186,6 @@ export const nav_2_data = [
       },
     ],
     img: "./navbar-2-dropdown-pictures/bonvoyage-car-rentals-learn-image.jpg",
-  },
-];
-
-export const navBar2Data = [
-  // { route: "/", menuName: "Home", image: "./134.png" },
-
-  {
-    menuName: "Reservation",
-    image:
-      "./navbar-2-dropdown-pictures/bonvoyage-car-rentals-reservation-image.avif",
-
-    header: [
-      {
-        title: "CAR RENTAL",
-        items: [
-          "Start-a-car-reservation",
-          "third-party-reservation",
-          "How-we-operate",
-          "Services",
-        ],
-      },
-
-      {
-        title: "BUSINESSES",
-        items: ["Buy-a-car", "Sell-a-car"],
-      },
-
-      {
-        title: "GOOD DEALS",
-        items: ["Cars-under-$5000", "Insured-cars"],
-      },
-
-      {
-        title: "PROMO",
-        items: ["Special-offers", "For-events"],
-      },
-    ],
-  },
-
-  {
-    menuName: "Locations",
-    image:
-      "./navbar-2-dropdown-pictures/bonvoyage-car-rentals-marryLand-location.webp",
-    header: [
-      {
-        title: "MARRY LAND ",
-
-        items: ["Lanham-MD", "Laurel-MD"],
-      },
-
-      {
-        title: "MINNESOTA",
-        items: ["Bloomington-MT"],
-      },
-
-      {
-        title: "TENNESSEE, ",
-        items: ["Clarksville-TN"],
-      },
-
-      {
-        title: "VIRGINIA, ",
-        items: ["Woodbridge-VA"],
-      },
-
-      {
-        title: "Coming Soon",
-        items: ["Texas, TX", "ATlanta, AT"],
-      },
-    ],
-  },
-
-  {
-    menuName: "Vehicles",
-    image:
-      "./navbar-2-dropdown-pictures/bonvoyage-car-rentals-marryLand-vehicles.webp",
-
-    header: [
-      {
-        title: "Standard Cars",
-        items: ["Standard-Cars"],
-      },
-
-      {
-        title: "Luxury Cars",
-        items: ["Luxury-Cars", "Premium-Cars"],
-      },
-
-      {
-        title: "Available  SUVs",
-        items: ["SUVs"],
-      },
-
-      {
-        title: "Trucks",
-        items: ["Pickup-Trucks"],
-      },
-
-      {
-        title: "Premium Cars",
-        items: ["Premium-Cars"],
-      },
-    ],
-  },
-
-  {
-    menuName: "Business",
-    image:
-      "./navbar-2-dropdown-pictures/bonvoyage-car-rental-business-image.avif",
-
-    header: [
-      {
-        title: "Buy Sell Cars",
-        items: ["View-All-Cars", "Buy-a-car", "Sell-a-car"],
-      },
-
-      {
-        title: "Rent to Own ",
-        items: ["rent-to-own"],
-      },
-
-      {
-        title: "Ride Share",
-        items: ["share-a-ride"],
-      },
-
-      {
-        title: "Offers",
-        items: ["Cars-under-$5000"],
-      },
-    ],
-  },
-
-  {
-    menuName: "Learn",
-    image: "./navbar-2-dropdown-pictures/bonvoyage-car-rentals-learn-image.jpg",
-
-    header: [
-      {
-        title: "About Us",
-        items: ["Learn-about-company", "How-we-operate", "Our-offerings"],
-      },
-
-      {
-        title: "Safety",
-        items: ["Our-safety-policy"],
-      },
-
-      {
-        title: "Holidays",
-        items: ["holiday-offers"],
-      },
-
-      {
-        title: "Customer Support",
-        items: ["Contact-Us"],
-      },
-
-      {
-        title: "Blog",
-        items: [
-          "Accident",
-          "Avoid-Paying-Deposits",
-          // "Best-Car-companies",
-          "Car-crash-without-insurance",
-          "Driver-fault",
-          "Insurance-Importance",
-          "No-Insurance-crash",
-          // "Overview",
-          "Pay-tolls",
-          "Rental-car-state",
-          "Rental-car-stolen",
-          "See-More",
-          // "Repairs",
-          // "Requirements",
-          // "Time-to-report-stolen",
-          // "knowledge-on-car-crash",
-          // "best-short-term-car-rental-in-lanham",
-        ],
-      },
-    ],
   },
 ];
 
