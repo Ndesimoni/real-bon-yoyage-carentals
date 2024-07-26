@@ -8,7 +8,9 @@ function Nav_2() {
   const [activeLink, setActiveLink] = useState(null);
   const navigate = useNavigate();
 
+  //todo this now handles the navigation to the vehicle route
   function handleNavigate(linkItem) {
+    setActiveLink(null);
     navigate(
       data[activeLink].title === "Vehicles"
         ? `all-vehicle-category/${linkItem}`
@@ -46,34 +48,11 @@ function Nav_2() {
                   <div>
                     {linkEl.linkItems.map((linkItem, i) => {
                       return (
-                        <div
-                          key={i}
-                          onClick={() => handleNavigate(linkItem, i, index)}
-                        >
-                          <li
-                            onClick={() => setActiveLink(null)}
-                            className=" px-[2px] py-[1px] line-clamp-1 hover:text-red-500  hover:underline hover:px-1 hover:text-base text-sm capitalize"
-                          >
+                        <div key={i} onClick={() => handleNavigate(linkItem)}>
+                          <li className=" px-[2px] py-[1px] line-clamp-1 hover:text-red-500  hover:underline hover:px-1 hover:text-base text-sm capitalize">
                             {linkItem.replaceAll("-", " ")}
                           </li>
                         </div>
-
-                        // <NavLink
-                        //   key={i}
-                        //   to={
-                        //     data[activeLink].title === "Vehicles" &&
-                        //     (i || index) > 0
-                        //       ? `our-vehicle-collection/${linkItem}`
-                        //       : linkItem
-                        //   }
-                        // >
-                        //   <li
-                        //     onClick={() => setActiveLink(null)}
-                        //     className=" px-[2px] py-[1px] line-clamp-1 hover:text-red-500  hover:underline hover:px-1 hover:text-base text-sm capitalize"
-                        //   >
-                        //     {linkItem.replaceAll("-", " ")}
-                        //   </li>
-                        // </NavLink>
                       );
                     })}
                   </div>
@@ -94,3 +73,20 @@ function Nav_2() {
 }
 
 export default Nav_2;
+
+// <NavLink
+//   key={i}
+//   to={
+//     data[activeLink].title === "Vehicles" &&
+//     (i || index) > 0
+//       ? `our-vehicle-collection/${linkItem}`
+//       : linkItem
+//   }
+// >
+//   <li
+//     onClick={() => setActiveLink(null)}
+//     className=" px-[2px] py-[1px] line-clamp-1 hover:text-red-500  hover:underline hover:px-1 hover:text-base text-sm capitalize"
+//   >
+//     {linkItem.replaceAll("-", " ")}
+//   </li>
+// </NavLink>

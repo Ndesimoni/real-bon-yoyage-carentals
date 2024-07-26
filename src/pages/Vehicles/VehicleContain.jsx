@@ -1,6 +1,6 @@
 const VehicleContain = ({ car }) => {
   function onHandleBooking() {
-    console.log("hello world", car.name);
+    // console.log("hello world", car.name);
   }
 
   return (

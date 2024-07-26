@@ -5,11 +5,14 @@ import SingleTextImageView from "../../components/ui/Reuseable_Ui/SingleTextImag
 import VehicleContain from "./VehicleContain";
 
 function Vehicle() {
-  //todo this carsId params data is coming from reservation form or it could come from the carFleet single vehicles or when navigate to vehicleCategory
   const { carsId } = useParams();
-  const incomingPath = carsId;
-  console.log(incomingPath);
 
+  //todo this carsId params data is coming from reservation form or it could come from the carFleet single vehicles or when navigate to vehicleCategory
+
+  const incomingPath = carsId;
+
+  //   console.log(incomingPath);
+  //   console.log(allCars);
   return (
     <>
       <SingleTextImageView image="url(/help.jpg)">

@@ -3,6 +3,7 @@ import { CiCircleQuestion } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import Button from "../../ui/Reuseable_Ui/Button";
 import ReservationDropdown from "./ReservationDropdown";
+import { useNavigate } from "react-router-dom";
 
 const ReservationFormStyles = styled.div({
   backgroundColor: "white",
@@ -16,6 +17,8 @@ const ReservationForm = () => {
   const [showReservationForm, setShowReservationForm] = useState(false);
   const [bookAsGuestForm, SetBookAsGuestForm] = useState(false);
   const [showInformation, setShowInformation] = useState(false);
+  const [searchCar, setSearchCar] = useState("");
+  const navigate = useNavigate();
 
   function handleClick(e) {
     const closestParent = e.target.closest("form");
@@ -34,6 +37,12 @@ const ReservationForm = () => {
 
   function onHandleInformation() {
     setShowInformation(!showInformation);
+  }
+
+  function handleSearch() {
+    navigate(
+      `${searchCar === "all-cars" ? "all-available-cars" : "all-vehicle-category"}`
+    );
   }
 
   return (
@@ -59,22 +68,11 @@ const ReservationForm = () => {
         <option value="" disabled selected hidden>
           Choose a state of operation...
         </option>
-        <option value=""> marryland</option>
-        <option value=""> minnesota</option>
-        <option value=""> tennessee</option>
-        <option value=""> virginia</option>
+        <option value="marryland"> marryland</option>
+        <option value="minnesota"> minnesota</option>
+        <option value="tennessee"> tennessee</option>
+        <option value="virginia"> virginia</option>
       </select>
-      {/* 
-      <input
-        role="button"
-        className="w-full h-10 border-gray-200 border placeholder:pl-4"
-        type="text"
-        placeholder="Click to start a reservation"
-        id="reservation"
-        onClick={() => {
-          setShowReservationForm(true);
-        }}
-      /> */}
 
       {/* //todo // this is for the both dropdowns   */}
       {/* this is the dropdown */}
@@ -105,21 +103,27 @@ const ReservationForm = () => {
           </div>
         </div>
 
+        {/* //todo this is the search car section */}
         <div className="text-xs text-white p-1">
-          <button className="border border-r-none px-2 py-1 bg-red-500 font-semibold ring-offset ring-1 ">
+          <button
+            onClick={handleSearch}
+            className="border border-r-none px-2 py-1 bg-red-500 font-semibold ring-offset ring-1 "
+          >
             Search
           </button>
+
           <select
             name=""
+            value={searchCar}
+            onChange={(e) => setSearchCar(e.target.value)}
             id=""
             className="appearance-none border p-1  bg-green-600 text-xs "
           >
             <option value="" disabled selected hidden>
-              {" "}
               Choose Categories
             </option>
-            <option value="">all cars</option>
-            <option value=""> Car Categories</option>
+            <option value="all-cars">all cars</option>
+            <option value="all-vehicle-category">all vehicle categories</option>
           </select>
         </div>
       </div>

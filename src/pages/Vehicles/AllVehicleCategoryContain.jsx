@@ -1,7 +1,13 @@
 import { IoBagOutline, IoPeopleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
-const VehicleContain = ({ type, categoryName, description, carImage, id }) => {
+const AllVehicleCategoryContain = ({
+  type,
+  categoryName,
+  description,
+  carImage,
+  id,
+}) => {
   // const navigate = useNavigate();
 
   return (
@@ -39,4 +45,4 @@ const VehicleContain = ({ type, categoryName, description, carImage, id }) => {
   );
 };
 
-export default VehicleContain;
+export default AllVehicleCategoryContain;

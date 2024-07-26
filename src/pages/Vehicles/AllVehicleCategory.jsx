@@ -1,9 +1,9 @@
 // import { useLocation } from "react-router-dom";
 import { carTypeCategory } from "../../DB/Local_Data_Base";
-import VehicleCategoryType from "./AllVehicleCategoryContain";
+import AllVehicleCategoryContain from "./AllVehicleCategoryContain";
 // import { useState } from "react";
 
-function AvailableCars() {
+function AllVehicleCategory() {
   // incoming state from formDat
   // let { state } = useLocation();
 
@@ -15,7 +15,7 @@ function AvailableCars() {
         </h1>
 
         {carTypeCategory.map((category, index) => (
-          <VehicleCategoryType
+          <AllVehicleCategoryContain
             key={index}
             description={category.description}
             carImage={category.carImage}
@@ -27,4 +27,4 @@ function AvailableCars() {
   );
 }
 
-export default AvailableCars;
+export default AllVehicleCategory;
