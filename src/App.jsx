@@ -46,11 +46,11 @@ import Services from "./pages/Reservations/Services";
 import SellACar from "./pages/Business/SellACar";
 import UserDashboard from "./components/UserDashboard";
 
-import AllVehicleCategory from "./pages/Vehicles/AllVehicleCategory";
+// import AllVehicleCategory from "./pages/Vehicles/AllVehicleCategory";
 import Cars from "./pages/Vehicles/Cars";
 import ReserveForThirdPartyAndHolidayOffers from "./pages/Reservations/ReserveForThirdPartyAndHolidayOffers";
 import AvailableCars from "./pages/Vehicles/AvailableCars";
-import Vehicle from "./pages/Vehicles/Vehicle";
+// import Vehicle from "./pages/Vehicles/Vehicle";
 
 // import BookingForm from "./components/Form/BookingForm";
 
@@ -103,7 +103,10 @@ const App = () => {
               element={<RideShareReservationAndMore />}
             />
 
-            <Route
+            {
+              //we are now using just available cars to display the various cars. So are not going to need this two routes anymore
+            }
+            {/* <Route
               path="/All-vehicle-category"
               element={<AllVehicleCategory />}
             />
@@ -111,7 +114,7 @@ const App = () => {
             <Route
               path="/All-vehicle-category/:carsId"
               element={<Vehicle />} //todo this needs to be studied
-            />
+            /> */}
             <Route path="/our-vehicle-collection" element={<AvailableCars />} />
             <Route path="/our-vehicle-collection/:type" element={<Cars />} />
             {/* //todo  forms */}
