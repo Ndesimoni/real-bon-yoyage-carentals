@@ -76,19 +76,4 @@ function Nav_2() {
 
 export default Nav_2;
 
-// <NavLink
-//   key={i}
-//   to={
-//     data[activeLink].title === "Vehicles" &&
-//     (i || index) > 0
-//       ? `our-vehicle-collection/${linkItem}`
-//       : linkItem
-//   }
-// >
-//   <li
-//     onClick={() => setActiveLink(null)}
-//     className=" px-[2px] py-[1px] line-clamp-1 hover:text-red-500  hover:underline hover:px-1 hover:text-base text-sm capitalize"
-//   >
-//     {linkItem.replaceAll("-", " ")}
-//   </li>
-// </NavLink>
+

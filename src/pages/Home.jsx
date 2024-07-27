@@ -18,8 +18,10 @@ import Offerings from "../components/Services/offering/Offerings";
 import OfferingContains from "../components/Services/offering/OfferingContains";
 import TypesOfDealsOffered from "../components/Services/DealsOffered/TypesOfDealsOffered";
 import TypesOfDealContain from "../components/Services/DealsOffered/TypesOfDealContain";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
+
   return (
     <div>
       {/* //todo this is the main image section in home page */}
@@ -80,12 +82,12 @@ const HomePage = () => {
           <br />
           and certified cab drivers to drive you safely to your destination.
         </p>
-        <button className="text-white bg-stone-900 uppercase py-2 px-4 border border-white hover:opacity-50 transition-all">
-          Rent a car
-        </button>
-        <button className="ml-10 text-white bg-stone-900 uppercase py-2 px-4 border border-white hover:opacity-50 transition-all">
+        <Link to="all-available-cars" className="text-white bg-stone-900 uppercase py-2 px-4 border border-white hover:opacity-50 transition-all">
+          all  available cars
+        </Link>
+        <Link to="all-vehicle-category" className="ml-10 text-white bg-stone-900 uppercase py-2 px-4 border border-white hover:opacity-50 transition-all">
           Vehicle collection
-        </button>
+        </Link>
       </ImageTextView>
 
       {/* //todo this is the  first More Services section in home page */}
@@ -97,11 +99,15 @@ const HomePage = () => {
         description="Trust your local Enterprise experts to help you find the light and medium-duty vehicles you need, including pickup trucks, box trucks, moving trucks and cargo vans."
       >
         {/* this is the offering section which hold the image, description and button */}
+
+
         <OfferingContains
           image="https://www.enterprisetrucks.com/content/dam/truckrental/en_us/homepage/Truck_T16_Eng_Branch-Lineup-375x210-new.jpeg"
           h3="Dependable vehicles, great service"
           description="Enterprise specializes in commercial grade cargo vans and trucks to deliver the dependability, flexibility and service you need to keep moving."
           button="View Truck Rental Vehicles"
+          routeLinks="Economy-Cars"
+
         />
 
         <OfferingContains
@@ -109,6 +115,7 @@ const HomePage = () => {
           h3="Dependable vehicles, great service"
           description="Enterprise specializes in commercial grade cargo vans and trucks to deliver the dependability, flexibility and service you need to keep moving."
           button="View Truck Rental Vehicles"
+          roteLinks="Standard-Cars"
         />
 
         <OfferingContains
@@ -116,6 +123,7 @@ const HomePage = () => {
           h3="Dependable vehicles, great service"
           description="Enterprise specializes in commercial grade cargo vans and trucks to deliver the dependability, flexibility and service you need to keep moving."
           button="View Truck Rental Vehicles"
+          routeLinks="Premium-Cars"
         />
 
         <OfferingContains
@@ -123,6 +131,7 @@ const HomePage = () => {
           h3="Dependable vehicles, great service"
           description="Enterprise specializes in commercial grade cargo vans and trucks to deliver the dependability, flexibility and service you need to keep moving."
           button="View Truck Rental Vehicles"
+          routeLinks="SUVs"
         />
       </Offerings>
 
@@ -186,42 +195,15 @@ const HomePage = () => {
         />
       </TypesOfDealsOffered>
 
+
+
+
       {/* //todo this is the  first Offering section in home page */}
-      <Offerings
-        heading="Latest Offerings"
-        description="Trust your local Enterprise experts to help you find the light and medium-duty vehicles you need, including pickup trucks, box trucks, moving trucks and cargo vans."
-      >
-        {/* this is the offering section which hold the image, description and button */}
-        <OfferingContains
-          image="https://www.enterprisetrucks.com/content/dam/truckrental/en_us/homepage/Truck_T16_Eng_Branch-Lineup-375x210-new.jpeg"
-          h3="Dependable vehicles, great service"
-          description="Enterprise specializes in commercial grade cargo vans and trucks to deliver the dependability, flexibility and service you need to keep moving."
-          button="View Truck Rental Vehicles"
-        />
 
-        <OfferingContains
-          image="https://www.enterprisetrucks.com/content/dam/truckrental/en_us/homepage/Truck_T16_Eng_Branch-Lineup-375x210-new.jpeg"
-          h3="Dependable vehicles, great service"
-          description="Enterprise specializes in commercial grade cargo vans and trucks to deliver the dependability, flexibility and service you need to keep moving."
-          button="View Truck Rental Vehicles"
-        />
-
-        <OfferingContains
-          image="https://www.enterprisetrucks.com/content/dam/truckrental/en_us/homepage/Truck_T16_Eng_Branch-Lineup-375x210-new.jpeg"
-          h3="Dependable vehicles, great service"
-          description="Enterprise specializes in commercial grade cargo vans and trucks to deliver the dependability, flexibility and service you need to keep moving."
-          button="View Truck Rental Vehicles"
-        />
-
-        <OfferingContains
-          image="https://www.enterprisetrucks.com/content/dam/truckrental/en_us/homepage/Truck_T16_Eng_Branch-Lineup-375x210-new.jpeg"
-          h3="Dependable vehicles, great service"
-          description="Enterprise specializes in commercial grade cargo vans and trucks to deliver the dependability, flexibility and service you need to keep moving."
-          button="View Truck Rental Vehicles"
-        />
-      </Offerings>
     </div>
   );
 };
 
 export default HomePage;
+
+

@@ -17,7 +17,8 @@ const ReservationForm = () => {
   const [showReservationForm, setShowReservationForm] = useState(false);
   const [bookAsGuestForm, SetBookAsGuestForm] = useState(false);
   const [showInformation, setShowInformation] = useState(false);
-  const [searchCar, setSearchCar] = useState("");
+  const [searchCar, setSearchCar] = useState('');
+
   const navigate = useNavigate();
 
   function handleClick(e) {
@@ -40,8 +41,9 @@ const ReservationForm = () => {
   }
 
   function handleSearch() {
+    if (searchCar === "") return
     navigate(
-      `${searchCar === "all-cars" ? "all-available-cars" : "all-vehicle-category"}`
+      `${searchCar === "all-cars" && "all-available-cars" || searchCar === "all-vehicle-category" && "all-vehicle-category"} `
     );
   }
 
