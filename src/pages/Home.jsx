@@ -32,7 +32,7 @@ const HomePage = () => {
           Icons={IoPricetagsOutline}
           title="deals"
           NextArrow={MdNavigateNext}
-          linkPath='share-a-ride'
+          linkPath='best-short-term-car-rental-in-lanham'
           description=" Rent-To-Own is the smart alternative to car financing for those with bad or less than perfect credit."
         />
 
@@ -40,6 +40,7 @@ const HomePage = () => {
           Icons={IoMdBuild}
           title="rent After Accident "
           NextArrow={MdNavigateNext}
+          linkPath="accident-in-rental-car"
           description="Rent-To-Own is the smart alternative to car financing for those with  bad or less than perfect credit. "
         />
 
@@ -47,12 +48,14 @@ const HomePage = () => {
           Icons={IoKeyOutline}
           title="RENT-TO-OWN "
           NextArrow={MdNavigateNext}
+          linkPath="rent-to-own"
           description=" Rent-To-Own is the smart alternative to car financing for those with bad or less than perfect credit. "
         />
 
         <TypesOfDealContain
           Icons={IoIosCar}
           title="Ride share "
+          linkPath="share-a-ride"
           NextArrow={MdNavigateNext}
           description=" Rent-To-Own is the smart alternative to car financing for those with bad or less than perfect credit. "
         />
