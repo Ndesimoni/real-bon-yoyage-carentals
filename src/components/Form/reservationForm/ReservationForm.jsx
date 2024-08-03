@@ -6,8 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { useFormData } from "../../../lib/UrlCustomHook";
 
 
-
-
 const ReservationFormStyles = styled.div({
   backgroundColor: "white",
   width: "1000px",
@@ -24,8 +22,6 @@ const ReservationForm = () => {
   const [searchCar, setSearchCar] = useState('');
   // coming from custom hook 
   const { formData, handleChange } = useFormData()
-  console.log(formData)
-
 
   function handleClick(e) {
     const closestParent = e.target.closest("form");
@@ -49,7 +45,7 @@ const ReservationForm = () => {
   function handleSearch() {
     if (searchCar === "") return
     navigate(
-      `${searchCar === "all-cars" && "all-available-cars" || searchCar === "all-vehicle-category" && "all-vehicle-category"} `
+      `${searchCar === "all-cars" && "all-available-cars" || searchCar === "all-vehicle-category" && "all-vehicle-category"} `,
     );
   }
 

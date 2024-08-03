@@ -106,7 +106,7 @@ const App = () => {
             />
             <Route
               path="/all-vehicle-category/:carsId"
-              element={<Vehicle />} //todo this needs to be studied
+              element={<Vehicle />}
             />
             <Route path="all-available-cars" element={<AllCars />} />
 

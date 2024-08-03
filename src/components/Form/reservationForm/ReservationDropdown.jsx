@@ -45,13 +45,8 @@ const Label = styled.label({
 });
 
 
-
-
-
 function ReservationDropdown({ formData, handleChange }) {
   const [isChecked, setChecked] = useState(false);
-  // coming from custom hook
-  // const { formData, handleChange } = useFormData();
   const navigate = useNavigate();
 
   const handleCheckBox = (e) => {
