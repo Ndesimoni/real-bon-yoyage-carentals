@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import { CiCircleQuestion } from "react-icons/ci";
 import { useEffect, useState } from "react";
-import Button from "../../ui/Reuseable_Ui/Button";
 import ReservationDropdown from "./ReservationDropdown";
 import { useNavigate } from "react-router-dom";
+import { useFormData } from "../../../lib/UrlCustomHook";
+
+
+
 
 const ReservationFormStyles = styled.div({
   backgroundColor: "white",
@@ -17,9 +20,12 @@ const ReservationForm = () => {
   const [showReservationForm, setShowReservationForm] = useState(false);
   const [bookAsGuestForm, SetBookAsGuestForm] = useState(false);
   const [showInformation, setShowInformation] = useState(false);
-  const [searchCar, setSearchCar] = useState('');
-
   const navigate = useNavigate();
+  const [searchCar, setSearchCar] = useState('');
+  // coming from custom hook 
+  const { formData, handleChange } = useFormData()
+  console.log(formData)
+
 
   function handleClick(e) {
     const closestParent = e.target.closest("form");
@@ -58,7 +64,8 @@ const ReservationForm = () => {
       </label>
 
       <select
-        name=""
+        // name="stateOfOperation}"
+        // value={stateOpp}
         id=""
         className="w-full h-10 border-gray-200 border placeholder:pl-4 px-5 appearance-none"
         type="text"
@@ -66,6 +73,10 @@ const ReservationForm = () => {
         onClick={() => {
           setShowReservationForm(true);
         }}
+
+        name="stateOfOperation"
+        value={formData.stateOfOperation}
+        onChange={handleChange}
       >
         <option value="" disabled selected hidden>
           Choose a state of operation...
@@ -78,15 +89,17 @@ const ReservationForm = () => {
 
       {/* //todo // this is for the both dropdowns   */}
       {/* this is the dropdown */}
-      <div> {showReservationForm && <ReservationDropdown />}</div>
+      <div> {showReservationForm && <ReservationDropdown formData={formData} handleChange={handleChange} />}</div>
 
       {/* this is the for book as gust dropdown */}
-      <div> {bookAsGuestForm && <ReservationDropdown />}</div>
+      <div> {bookAsGuestForm && <ReservationDropdown formData={formData} handleChange={handleChange} />}</div>
 
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-1 text-sm mt-5 mb-5 ">
+
+
           <div className="flex gap-2" onClick={GuestReservation}>
-            <Button>book as guest</Button>
+            <button className="booking_btn p-[5px]">book as guest</button>
           </div>
 
           <div onClick={onHandleInformation} className="relative">

@@ -63,6 +63,7 @@ export const useThirdPartyAndHolidaysOffers = () => {
 
 //todo this is the data for the form object
 const dataValidation = {
+  stateOfOperation: "",
   firstName: "",
   lastName: "",
   email: "",
@@ -75,12 +76,35 @@ const dataValidation = {
   termConditions: "",
 };
 
+
+//todo this is the form input data
 export const useFormData = () => {
   const [formData, setFormData] = useState(dataValidation);
-  return { formData, setFormData };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    console.log(formData)
+  };
+
+
+  return { formData, setFormData, handleChange };
 };
+
+
+
+
 
 export const useCarQuery = () => {
   const [carQuery, setCarQuery] = useState();
   return { carQuery, setCarQuery };
 };
+
+
+
+
+
+// form reservation section here
+// const useUserBookingInput = () => {
+
+// }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { carMakeList } from "../../../DB/Local_Data_Base";
 import styled from "styled-components";
-import { useFormData } from "../../../lib/UrlCustomHook";
+// import { useFormData } from "../../../lib/UrlCustomHook";
 import { useNavigate } from "react-router-dom";
 // import { useForm } from "react-hook-form";
 
@@ -44,45 +44,29 @@ const Label = styled.label({
   display: "block",
 });
 
-function ReservationDropdown() {
+
+
+
+
+function ReservationDropdown({ formData, handleChange }) {
   const [isChecked, setChecked] = useState(false);
-  const { formData, setFormData } = useFormData();
+  // coming from custom hook
+  // const { formData, handleChange } = useFormData();
   const navigate = useNavigate();
-
-  //////changes ////////
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
 
   const handleCheckBox = (e) => {
     const { name, checked } = e.target;
     setChecked({ ...formData, [name]: checked });
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   formValidation();
-
-  //   navigate(`category?to=${formData.category}`, {
-  //     state: formData,
-  //   });
-  //   console.log(formData.category);
-  // };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    formValidation();
-
     //changed the route path to params.
     navigate(`/All-vehicle-category/${formData.category}`, {
       state: formData,
     });
-    console.log(formData.category);
-  };
 
-  function formValidation() {}
+  };
 
   return (
     <div className="flex text-lg mx-1 absolute justify-center ">
@@ -207,9 +191,9 @@ function ReservationDropdown() {
               <Label>Pick-up Date</Label>
               <InputStyles
                 type="date"
-                // name="pickUpDate"
-                // value={formData.pickUpDate}
-                // onChange={handleChange}
+                name="pickUpDate"
+                value={formData.pickUpDate}
+                onChange={handleChange}
               />
             </ItemStyle>
           </div>
@@ -219,20 +203,24 @@ function ReservationDropdown() {
             <ItemStyle>
               <Label>Drop Off Location</Label>
               <Select
-              // name="dropOffLocation"
-              // value={formData.dropOffLocation}
-              // onChange={handleChange}
+                name="dropOffLocation"
+                value={formData.dropOffLocation}
+                onChange={handleChange}
               >
                 <option value="" disabled selected hidden>
                   Choose a drop oof location...
                 </option>
+
                 <option>9500 Good Luck Road MD 20707</option>
+
                 <option>
                   7900 International Drive Suit 300 Bloomington MN 55425
                 </option>
+
                 <option>
                   1959 for Campbell Blvd, #1 Clarksville, TN 37042
                 </option>
+
                 <option>
                   1346 Old Bridge Road WoodBridge Ca 22192 Suite 101
                 </option>
@@ -244,9 +232,9 @@ function ReservationDropdown() {
               <Label className="mb-2">Drop Off Date</Label>
               <InputStyles
                 type="date"
-                //   // name="dropOffDate"
-                //   // value={formData.dropOffDate}
-                //   // onChange={handleChange}
+              //   // name="dropOffDate"
+              //   // value={formData.dropOffDate}
+              //   // onChange={handleChange}
               />
             </ItemStyle>
           </div>
@@ -305,9 +293,3 @@ function ReservationDropdown() {
 
 export default ReservationDropdown;
 
-// console.log(firstName);
-
-// if (isChecked === false) return;
-// console.log(formData);
-// let checkStatus = formValidation();
-// console.log(checkStatus);

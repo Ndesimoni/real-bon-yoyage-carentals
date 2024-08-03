@@ -1,7 +1,7 @@
 import Button from "../../ui/Reuseable_Ui/Button";
 
-const OfferingContains = ({ image, h3, description, button, routeLinks }) => {
-  console.log(routeLinks)
+const OfferingContains = ({ image, h3, description, button, }) => {
+
 
   return (
     <div className="flex gap-5 mt-14">
@@ -12,7 +12,7 @@ const OfferingContains = ({ image, h3, description, button, routeLinks }) => {
           <h3 className="header_2 ">{h3}</h3>
 
           <p className="mt-1 mb-6">{description} </p>
-          <Button routeLinks={routeLinks}>{button}</Button>
+          <Button>{button}</Button>
         </div>
       </div>
     </div>
