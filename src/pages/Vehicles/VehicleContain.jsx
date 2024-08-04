@@ -1,14 +1,11 @@
-import { useState } from "react";
-import ReservationForm from "../../components/Form/reservationForm/ReservationForm";
+// import { useState } from "react";
 
-const VehicleContain = ({ car, usersReservationDetails }) => {
-  const [guestBookingCar, setGuestBookingCar] = useState(false);
-
-  function onHandleBookingAsGuest() {
-    setGuestBookingCar(!guestBookingCar);
-  }
-
-  function onHandleHaveAccountBooking() {}
+const VehicleContain = ({
+  car,
+  usersReservationDetails,
+  onHandleBookingAsGuest,
+}) => {
+  // function onHandleHaveAccountBooking() {}
 
   return (
     <div className="shadow-lg relative">
@@ -25,22 +22,25 @@ const VehicleContain = ({ car, usersReservationDetails }) => {
       </p>
 
       <div className="flex justify-around items-center pb-4">
-        {/* //todo  this will check for the incoming path and then render the button that matches */}
+        {/* //todo  this will check for the incoming usersReservationDetails from all directions and then render the button that matches */}
         {usersReservationDetails === null ||
-        usersReservationDetails.stateOfOperation === undefined ? (
-          <button onClick={onHandleBookingAsGuest} className="booking_btn mb-5">
+        usersReservationDetails.stateOfOperation === undefined ||
+        usersReservationDetails.stateOfOperation === "" ? (
+          <button
+            onClick={() => onHandleBookingAsGuest(car)}
+            className="booking_btn mb-5"
+          >
             book as guest
           </button>
         ) : (
           <button
-            onClick={onHandleHaveAccountBooking}
+            // onClick={onHandleHaveAccountBooking}
             className="booking_btn mb-5"
           >
             Book now
           </button>
         )}
       </div>
-      {guestBookingCar && <ReservationForm />}
     </div>
   );
 };
