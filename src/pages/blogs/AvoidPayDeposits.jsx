@@ -1,9 +1,11 @@
 function AvoidPayDeposit() {
   return (
     <div className="text-lg">
-      <div className="h-[450px]  overflow-hidden">
-        <img src="/pay-deposits.png" alt="pay-deposit" className="w-full" />
-      </div>
+      <img
+        src="/pay-deposits.png"
+        alt="pay-deposit"
+        className="w-full object-cover h-[250px]"
+      />
 
       <div className="w-4/5 mx-auto px-4 mt-10">
         <div>

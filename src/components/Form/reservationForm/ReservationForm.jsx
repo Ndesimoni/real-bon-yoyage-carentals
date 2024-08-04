@@ -15,7 +15,6 @@ const ReservationFormStyles = styled.div({
 
 const ReservationForm = () => {
   const [showReservationForm, setShowReservationForm] = useState(false);
-  const [bookAsGuestForm, SetBookAsGuestForm] = useState(false);
 
   function handleClick(e) {
     const closestParent = e.target.closest("form");
@@ -23,12 +22,9 @@ const ReservationForm = () => {
     setShowReservationForm(false);
   }
 
-  function GuestReservation() {
-    SetBookAsGuestForm(!false);
-  }
-
   useEffect(() => {
     document.body.addEventListener("click", handleClick, true);
+
     return () => document.body.removeEventListener("click", handleClick);
   }, [showReservationForm]);
 
@@ -53,15 +49,15 @@ const ReservationForm = () => {
         }}
       />
 
-      {/* //todo // this is for the both dropdowns   */}
-      {/* this is the dropdown */}
-      <div> {showReservationForm && <ReservationDropdown />}</div>
+      {showReservationForm && <ReservationDropdown />}
 
-      {/* this is the for book as gust dropdown */}
-      <div> {bookAsGuestForm && <ReservationDropdown />}</div>
+      {showReservationForm && <ReservationDropdown />}
 
       <div className="flex items-center gap-1 text-sm mt-5 mb-5 ">
-        <div className="flex gap-2" onClick={GuestReservation}>
+        <div
+          className="flex gap-2"
+          onClick={() => setShowReservationForm(true)}
+        >
           <Button>book as guest</Button>
         </div>
 
