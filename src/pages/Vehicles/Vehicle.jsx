@@ -11,6 +11,8 @@ function Vehicle() {
   //todo reservation input data coming from the form
   const { state: usersReservationDetails } = useLocation();
 
+  //   console.group(usersReservationDetails);
+
   return (
     <>
       {/* //todo this is the SingleTextImageView  */}
