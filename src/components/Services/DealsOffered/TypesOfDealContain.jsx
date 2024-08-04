@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 // todo; // this is package imports
@@ -13,17 +14,17 @@ export const DivStyles = styled.div({
   backgroundColor: "white",
 });
 
-const TypesOfDealContain = ({ Icons, title, NextArrow, description }) => {
+const TypesOfDealContain = ({ Icons, title, NextArrow, description, linkPath }) => {
   return (
     <DivStyles>
-      <div className="my-5 text-red-600 ">
+      <div className="my-5 text-red-600 hover:text-green-600 ">
         <Icons size={60} />
       </div>
 
-      <h2 className="header_3 uppercase">
+      <Link to={linkPath} className="header_3 uppercase hover:text-green-600 ">
         <span> {title} </span>
         <NextArrow className="w-6 h-6" />
-      </h2>
+      </Link>
       <div>
         <p>{description}</p>
       </div>

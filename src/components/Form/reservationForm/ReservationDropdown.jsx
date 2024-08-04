@@ -46,8 +46,6 @@ const Label = styled.label({
 
 function ReservationDropdown() {
   const navigate = useNavigate();
-  //destructuring the errors property from the forState object provided by react hook forms
-
   const {
     register,
     handleSubmit,
@@ -127,6 +125,7 @@ function ReservationDropdown() {
 
           <ItemStyle>
             <Label>Vehicle Category</Label>
+
             <Select {...register("category")}>
               {carType.map((type, index) => (
                 <option key={index}>{type}</option>
@@ -172,14 +171,18 @@ function ReservationDropdown() {
           <div>
             <ItemStyle>
               <Label>Drop Off Location</Label>
+
               <Select {...register("dropOffLocation")}>
                 <option>9500 Good Luck Road MD 20707</option>
+
                 <option>
                   7900 International Drive Suit 300 Bloomington MN 55425
                 </option>
+
                 <option>
                   1959 for Campbell Blvd, #1 Clarksville, TN 37042
                 </option>
+
                 <option>
                   1346 Old Bridge Road WoodBridge Ca 22192 Suite 101
                 </option>

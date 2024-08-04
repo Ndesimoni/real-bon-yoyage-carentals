@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import { CiCircleQuestion } from "react-icons/ci";
-
-import ReservationDropdown from "./ReservationDropdown";
 import { useEffect, useState } from "react";
-import Button from "../../ui/Reuseable_Ui/Button";
+import ReservationDropdown from "./ReservationDropdown";
 
 const ReservationFormStyles = styled.div({
   backgroundColor: "white",
@@ -33,36 +30,58 @@ const ReservationForm = () => {
       <h1 className="font-extrabold text-4xl py-5">Reserve a Vehicle</h1>
       <label className="flex items-center justify-between ">
         <p className="font-semibold text-sm">
-          Pic-up & Return Location (ZIP,City or Airport)*
+          Pic-up & Return Location ( City, State or Airport )*
         </p>
         <span className="text-red-600 italic"> * Required Field</span>
       </label>
 
-      <input
-        role="button"
-        className="w-full h-10 border-gray-200 border placeholder:pl-4"
+      <select
+        // name="stateOfOperation}"
+        // value={stateOpp}
+        id=""
+        className="w-full h-10 border-gray-200 border placeholder:pl-4 px-5 appearance-none"
         type="text"
         placeholder="Click to start a reservation"
-        id="reservation"
         onClick={() => {
           setShowReservationForm(true);
         }}
-      />
+        name="stateOfOperation"
+      >
+        <option value="" disabled selected hidden>
+          Choose a state of operation...
+        </option>
+        <option value="marryland"> marryland</option>
+        <option value="minnesota"> minnesota</option>
+        <option value="tennessee"> tennessee</option>
+        <option value="virginia"> virginia</option>
+      </select>
 
       {showReservationForm && <ReservationDropdown />}
 
       {showReservationForm && <ReservationDropdown />}
 
       <div className="flex items-center gap-1 text-sm mt-5 mb-5 ">
-        <div
-          className="flex gap-2"
-          onClick={() => setShowReservationForm(true)}
-        >
-          <Button>book as guest</Button>
+        <div className="flex gap-2">
+          <button
+            onClick={() => setShowReservationForm(true)}
+            className="border border-r-none px-2 py-1 bg-red-500 font-semibold ring-offset ring-1 "
+          >
+            book as guest
+          </button>
         </div>
 
-        <div>
-          <CiCircleQuestion size={20} color="green" />
+        <div className="text-xs text-white p-1">
+          <select
+            name=""
+            id=""
+            className="appearance-none border p-1  bg-green-600 text-xs "
+          >
+            <option value="" disabled selected hidden>
+              Choose Categories
+            </option>
+            <option value="all-cars">all cars</option>
+            <option value="all-vehicle-category">all vehicle categories</option>
+          </select>
         </div>
       </div>
     </ReservationFormStyles>

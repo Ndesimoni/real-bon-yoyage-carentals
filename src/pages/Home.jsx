@@ -18,6 +18,7 @@ import Offerings from "../components/Services/offering/Offerings";
 import OfferingContains from "../components/Services/offering/OfferingContains";
 import TypesOfDealsOffered from "../components/Services/DealsOffered/TypesOfDealsOffered";
 import TypesOfDealContain from "../components/Services/DealsOffered/TypesOfDealContain";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -31,32 +32,32 @@ const HomePage = () => {
           Icons={IoPricetagsOutline}
           title="deals"
           NextArrow={MdNavigateNext}
-          description=" Rent-To-Own is the smart alternative to car financing for those with bad
- or less than perfect credit."
+          linkPath='best-short-term-car-rental-in-lanham'
+          description=" Rent-To-Own is the smart alternative to car financing for those with bad or less than perfect credit."
         />
 
         <TypesOfDealContain
           Icons={IoMdBuild}
           title="rent After Accident "
           NextArrow={MdNavigateNext}
-          description="Rent-To-Own is the smart alternative to car financing for those with
-        bad or less than perfect credit. "
+          linkPath="accident-in-rental-car"
+          description="Rent-To-Own is the smart alternative to car financing for those with  bad or less than perfect credit. "
         />
 
         <TypesOfDealContain
           Icons={IoKeyOutline}
           title="RENT-TO-OWN "
           NextArrow={MdNavigateNext}
-          description=" Rent-To-Own is the smart alternative to car financing for those with
-       bad or less than perfect credit. "
+          linkPath="rent-to-own"
+          description=" Rent-To-Own is the smart alternative to car financing for those with bad or less than perfect credit. "
         />
 
         <TypesOfDealContain
           Icons={IoIosCar}
           title="Ride share "
+          linkPath="share-a-ride"
           NextArrow={MdNavigateNext}
-          description=" Rent-To-Own is the smart alternative to car financing for those with
-   bad or less than perfect credit. "
+          description=" Rent-To-Own is the smart alternative to car financing for those with bad or less than perfect credit. "
         />
       </TypesOfDealsOffered>
 
@@ -80,12 +81,18 @@ const HomePage = () => {
           <br />
           and certified cab drivers to drive you safely to your destination.
         </p>
-        <button className="text-white bg-stone-900 uppercase py-2 px-4 border border-white hover:opacity-50 transition-all">
-          Rent a car
-        </button>
-        <button className="ml-10 text-white bg-stone-900 uppercase py-2 px-4 border border-white hover:opacity-50 transition-all">
+        <Link
+          to="all-available-cars"
+          className="text-white bg-stone-900 uppercase py-2 px-4 border border-white hover:opacity-50 transition-all"
+        >
+          all available cars
+        </Link>
+        <Link
+          to="all-vehicle-category"
+          className="ml-10 text-white bg-stone-900 uppercase py-2 px-4 border border-white hover:opacity-50 transition-all"
+        >
           Vehicle collection
-        </button>
+        </Link>
       </ImageTextView>
 
       {/* //todo this is the  first More Services section in home page */}
@@ -97,11 +104,13 @@ const HomePage = () => {
         description="Trust your local Enterprise experts to help you find the light and medium-duty vehicles you need, including pickup trucks, box trucks, moving trucks and cargo vans."
       >
         {/* this is the offering section which hold the image, description and button */}
+
         <OfferingContains
           image="https://www.enterprisetrucks.com/content/dam/truckrental/en_us/homepage/Truck_T16_Eng_Branch-Lineup-375x210-new.jpeg"
           h3="Dependable vehicles, great service"
           description="Enterprise specializes in commercial grade cargo vans and trucks to deliver the dependability, flexibility and service you need to keep moving."
           button="View Truck Rental Vehicles"
+          routeLinks="Economy-Cars"
         />
 
         <OfferingContains
@@ -109,6 +118,7 @@ const HomePage = () => {
           h3="Dependable vehicles, great service"
           description="Enterprise specializes in commercial grade cargo vans and trucks to deliver the dependability, flexibility and service you need to keep moving."
           button="View Truck Rental Vehicles"
+          roteLinks="Standard-Cars"
         />
 
         <OfferingContains
@@ -116,6 +126,7 @@ const HomePage = () => {
           h3="Dependable vehicles, great service"
           description="Enterprise specializes in commercial grade cargo vans and trucks to deliver the dependability, flexibility and service you need to keep moving."
           button="View Truck Rental Vehicles"
+          routeLinks="Premium-Cars"
         />
 
         <OfferingContains
@@ -123,6 +134,7 @@ const HomePage = () => {
           h3="Dependable vehicles, great service"
           description="Enterprise specializes in commercial grade cargo vans and trucks to deliver the dependability, flexibility and service you need to keep moving."
           button="View Truck Rental Vehicles"
+          routeLinks="SUVs"
         />
       </Offerings>
 
@@ -135,20 +147,20 @@ const HomePage = () => {
         description="Travel is a new way of perceiving your life. It's a good passion to build it. It's a good passion to build it. Unsafe travel is a lesson for life, while safe travel is a lifetime memory. Rent a BonVoyage Car Rental."
       >
         <h3 className="text-red-500 text-3xl font-bold mb-4">
-          A rental car for comfortable <br />
-          and easy traveling
+          We are always available  <br />
+          because we care, your satisfaction is our priority
         </h3>
         <p className="text-white text-xl mb-8">
-          BonVoyage Car Rental provides hygienic, responsible,
+          When renting a car with BonVoyage,
           <br />
-          and certified cab drivers to drive you safely to your destination.
+          you get free access to 24/7 customer support for every iss
         </p>
-        <button className="text-white bg-stone-900 uppercase py-2 px-4 border border-white hover:opacity-50 transition-all">
-          Rent a car
-        </button>
-        <button className="ml-10 text-white bg-stone-900 uppercase py-2 px-4 border border-white hover:opacity-50 transition-all">
-          Vehicle collection
-        </button>
+        <Link to="Contact-Us" className="text-white bg-stone-900 uppercase py-2 px-4 border border-white hover:opacity-50 transition-all">
+          Contact Us
+        </Link>
+        <Link to="Overview" className="ml-10 text-white bg-stone-900 uppercase py-2 px-4 border border-white hover:opacity-50 transition-all">
+          what we stand for
+        </Link>
       </ImageTextView>
 
       {/* //todo this is the type of deals offered section in home page */}
@@ -157,32 +169,28 @@ const HomePage = () => {
           Icons={IoPricetagsOutline}
           title="deals"
           NextArrow={MdNavigateNext}
-          description=" Rent-To-Own is the smart alternative to car financing for those with bad
- or less than perfect credit."
+          description=" Rent-To-Own is the smart alternative to car financing for those with bad or less than perfect credit."
         />
 
         <TypesOfDealContain
           Icons={IoMdBuild}
           title="rent After Accident "
           NextArrow={MdNavigateNext}
-          description="Rent-To-Own is the smart alternative to car financing for those with
-        bad or less than perfect credit. "
+          description="Rent-To-Own is the smart alternative to car financing for those with bad or less than perfect credit. "
         />
 
         <TypesOfDealContain
           Icons={IoKeyOutline}
           title="RENT-TO-OWN "
           NextArrow={MdNavigateNext}
-          description=" Rent-To-Own is the smart alternative to car financing for those with
-       bad or less than perfect credit. "
+          description=" Rent-To-Own is the smart alternative to car financing for those with bad or less than perfect credit. "
         />
 
         <TypesOfDealContain
           Icons={IoIosCar}
           title="Ride share "
           NextArrow={MdNavigateNext}
-          description=" Rent-To-Own is the smart alternative to car financing for those with
-   bad or less than perfect credit. "
+          description=" Rent-To-Own is the smart alternative to car financing for those with  bad or less than perfect credit. "
         />
       </TypesOfDealsOffered>
 
@@ -192,11 +200,15 @@ const HomePage = () => {
         description="Trust your local Enterprise experts to help you find the light and medium-duty vehicles you need, including pickup trucks, box trucks, moving trucks and cargo vans."
       >
         {/* this is the offering section which hold the image, description and button */}
+
+
         <OfferingContains
           image="https://www.enterprisetrucks.com/content/dam/truckrental/en_us/homepage/Truck_T16_Eng_Branch-Lineup-375x210-new.jpeg"
           h3="Dependable vehicles, great service"
           description="Enterprise specializes in commercial grade cargo vans and trucks to deliver the dependability, flexibility and service you need to keep moving."
           button="View Truck Rental Vehicles"
+          routeLinks="Economy-Cars"
+
         />
 
         <OfferingContains
@@ -204,6 +216,7 @@ const HomePage = () => {
           h3="Dependable vehicles, great service"
           description="Enterprise specializes in commercial grade cargo vans and trucks to deliver the dependability, flexibility and service you need to keep moving."
           button="View Truck Rental Vehicles"
+          roteLinks="Standard-Cars"
         />
 
         <OfferingContains
@@ -211,6 +224,7 @@ const HomePage = () => {
           h3="Dependable vehicles, great service"
           description="Enterprise specializes in commercial grade cargo vans and trucks to deliver the dependability, flexibility and service you need to keep moving."
           button="View Truck Rental Vehicles"
+          routeLinks="Premium-Cars"
         />
 
         <OfferingContains
@@ -218,8 +232,10 @@ const HomePage = () => {
           h3="Dependable vehicles, great service"
           description="Enterprise specializes in commercial grade cargo vans and trucks to deliver the dependability, flexibility and service you need to keep moving."
           button="View Truck Rental Vehicles"
+          routeLinks="SUVs"
         />
       </Offerings>
+
     </div>
   );
 };

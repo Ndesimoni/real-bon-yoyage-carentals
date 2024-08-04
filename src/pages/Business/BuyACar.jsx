@@ -1,6 +1,6 @@
 // import MainImage from "@/components/ui/MainImage";
 
-import AllCarMakeModels from "../Vehicles/AllVehicleCategory";
+import AllCarMakeModels from "../Vehicles/Vehicle";
 
 const BuyACar = () => {
   return (
