@@ -40,10 +40,9 @@ export const ItemStyle = styled.div({
   margin: "8px 5px",
 });
 
-const Label = styled.label({
+export const Label = styled.label({
   display: "block",
 });
-
 
 function ReservationDropdown({ formData, handleChange }) {
   const [isChecked, setChecked] = useState(false);
@@ -60,7 +59,6 @@ function ReservationDropdown({ formData, handleChange }) {
     navigate(`/All-vehicle-category/${formData.category}`, {
       state: formData,
     });
-
   };
 
   return (
@@ -72,6 +70,7 @@ function ReservationDropdown({ formData, handleChange }) {
         id="form"
       >
         {/* //todo this is the names */}
+
         <SectionStyle className=" flex justify-between ">
           {/* this is for first name */}
           <ItemStyle>
@@ -287,4 +286,3 @@ function ReservationDropdown({ formData, handleChange }) {
 }
 
 export default ReservationDropdown;
-

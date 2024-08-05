@@ -99,16 +99,17 @@ const App = () => {
               path="rent-to-own"
               element={<RideShareReservationAndMore />}
             />
-            {/* vehicles Routes*/}
+            {/* //todo vehicles Routes */}
             <Route
               path="/all-vehicle-category"
               element={<AllVehicleCategory />}
             />
-            <Route
-              path="/all-vehicle-category/:carsId"
-              element={<Vehicle />}
-            />
+            <Route path="/all-vehicle-category/:carsId" element={<Vehicle />} />
+
+            {/* this is all-available-cars routes */}
             <Route path="all-available-cars" element={<AllCars />} />
+            <Route path="all-available-cars/:id" element={<AllCars />} />
+
 
             {/* //todo  forms */}
             <Route path="view-car-fleet" element={<CarFleet />} />
@@ -118,9 +119,6 @@ const App = () => {
             <Route path="Laurel-MD" element={<StartCarReservation />} />
 
             <Route path="clarksville-TN" element={<CLarksvilleTennessee />} />
-            {/* //todo this needs to be studied  still got some lakings*/}
-            {/* <Route path="clarksville-TN/:id" element={<AllVehicleCategory />} /> */}
-
             <Route path="bloomington-MT" element={<BloomingtonMinnesota />} />
             <Route path="woodbridge-VA" element={<WoodbridgeVirginia />} />
 
