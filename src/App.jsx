@@ -49,6 +49,7 @@ import UserDashboard from "./components/UserDashboard";
 import ReserveForThirdPartyAndHolidayOffers from "./pages/Reservations/ReserveForThirdPartyAndHolidayOffers";
 import Vehicle from "./pages/Vehicles/Vehicle";
 import AllCars from "./pages/Vehicles/AllCars";
+import UsersChosenCar from "./pages/Vehicles/UsersChosenCar";
 // import BookingForm from "./components/Form/BookingForm";
 
 const App = () => {
@@ -108,7 +109,7 @@ const App = () => {
 
             {/* this is all-available-cars routes */}
             <Route path="all-available-cars" element={<AllCars />} />
-            <Route path="all-available-cars/:id" element={<AllCars />} />
+            <Route path="all-available-cars/:id" element={<UsersChosenCar />} />
 
 
             {/* //todo  forms */}
