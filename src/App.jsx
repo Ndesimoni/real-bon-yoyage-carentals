@@ -50,6 +50,7 @@ import ReserveForThirdPartyAndHolidayOffers from "./pages/Reservations/ReserveFo
 import Vehicle from "./pages/Vehicles/Vehicle";
 import AllCars from "./pages/Vehicles/AllCars";
 import UsersChosenCar from "./pages/Vehicles/UsersChosenCar";
+
 // import BookingForm from "./components/Form/BookingForm";
 
 const App = () => {
@@ -106,11 +107,11 @@ const App = () => {
               element={<AllVehicleCategory />}
             />
             <Route path="/all-vehicle-category/:carsId" element={<Vehicle />} />
+            {/* <Route path="usersChosenCar" element={<Test />} /> */}
 
             {/* this is all-available-cars routes */}
             <Route path="all-available-cars" element={<AllCars />} />
             <Route path="all-available-cars/:id" element={<UsersChosenCar />} />
-
 
             {/* //todo  forms */}
             <Route path="view-car-fleet" element={<CarFleet />} />

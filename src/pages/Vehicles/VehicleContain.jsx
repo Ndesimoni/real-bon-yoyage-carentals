@@ -4,6 +4,7 @@ const VehicleContain = ({
   car,
   usersReservationDetails,
   onHandleBookingAsGuest,
+  filledFormBooking,
 }) => {
   // function onHandleHaveAccountBooking() {}
 
@@ -35,6 +36,8 @@ const VehicleContain = ({
         ) : (
           <button
             // onClick={onHandleHaveAccountBooking}
+
+            onClick={() => filledFormBooking(car)}
             className="booking_btn mb-5"
           >
             Book now

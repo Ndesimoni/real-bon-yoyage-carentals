@@ -4,24 +4,38 @@ import { useLocation, useParams } from "react-router-dom";
 import SingleTextImageView from "../../components/ui/Reuseable_Ui/SingleTextImageView";
 import VehicleContain from "./VehicleContain";
 import { useState } from "react";
-import ReservationForm from "../../components/Form/reservationForm/ReservationForm";
+
+import UsersChosenCar from "./UsersChosenCar";
 
 function Vehicle() {
     //todo this tow state control which component will render
+    // will look at this hook guestBookingCar and what it dose later
     const [guestBookingCar, setGuestBookingCar] = useState(false);
     const [showCars, setShowCars] = useState(true);
+
+    //todo   this two states holds the details of the chooses car
+    const [carDetailsFormNotFilled, setDetailsFormNotFilled] = useState();
+    const [carDetailsFormFilled, setCarDetailsFormFilled] = useState();
 
     //todo this carsId params data is coming from reservation form or it could come from the carFleet single vehicles or when navigate to vehicleCategory
     const { carsId: incomingPath } = useParams();
     //todo reservation input data coming from input, various carTypes, ViewAllVehicle and allCars
     const { state: usersReservationDetails } = useLocation();
-    //   console.log(usersReservationDetails.stateOfOperation);
 
+    //todo form not filled but navigating to the booking page
     function onHandleBookingAsGuest(car) {
+        // will look at this guestBookingCar and what it dose later
         setGuestBookingCar(!guestBookingCar);
         setShowCars(false);
-        console.log(car);
+        setDetailsFormNotFilled(car);
     }
+
+    //todo form filled before navigating to the booking page
+    function filledFormBooking(car) {
+        setCarDetailsFormFilled(car);
+        setShowCars(false);
+    }
+
 
     return (
         <>
@@ -33,9 +47,6 @@ function Vehicle() {
 
             <div className="flex justify-center items-center">
                 <div className="grid grid-cols-3 gap-20 mt-10 w-[1200px]">
-                    {/* //todo this will render when a click is fired on either from the book as guest or book now in vehicle component only */}
-                    {!showCars && <ReservationForm />}
-
                     {/* //todo this is filtering the vehicleCategory coming from the data base */}
                     {showCars &&
                         vehicleCategory
@@ -52,10 +63,19 @@ function Vehicle() {
                                     key={index}
                                     usersReservationDetails={usersReservationDetails}
                                     onHandleBookingAsGuest={onHandleBookingAsGuest}
+                                    filledFormBooking={filledFormBooking}
                                 />
                             ))}
                 </div>
             </div>
+
+            {/* //todo this will render when a click is fired on either from the book as guest or book now in vehicle component only */}
+            {!showCars && (
+                <UsersChosenCar
+                    carDetailsFormNotFilled={carDetailsFormNotFilled}
+                    carDetailsFormFilled={carDetailsFormFilled}
+                />
+            )}
         </>
     );
 }
