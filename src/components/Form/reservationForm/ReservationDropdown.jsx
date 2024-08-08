@@ -1,15 +1,11 @@
 import { useState } from "react";
-import { carMakeList } from "../../../DB/Local_Data_Base";
+import { carMakeList } from "../../../../DB/Local_Data_Base";
 import styled from "styled-components";
-// import { useFormData } from "../../../lib/UrlCustomHook";
 import { useNavigate } from "react-router-dom";
-// import { useForm } from "react-hook-form";
 
-// import { format } from "date-fns";
-
+//todo this are styles
 export const InputStyles = styled.input({
   border: "1px solid #d2d2d2",
-
   borderRadius: "5px",
   fontSize: "14px",
   padding: "0px 5px",
@@ -43,6 +39,8 @@ export const ItemStyle = styled.div({
 export const Label = styled.label({
   display: "block",
 });
+
+
 
 function ReservationDropdown({ formData, handleChange }) {
   const [isChecked, setChecked] = useState(false);
@@ -226,9 +224,9 @@ function ReservationDropdown({ formData, handleChange }) {
               <Label className="mb-2">Drop Off Date</Label>
               <InputStyles
                 type="date"
-              //   // name="dropOffDate"
-              //   // value={formData.dropOffDate}
-              //   // onChange={handleChange}
+                name="dropOffDate"
+                value={formData.dropOffDate}
+                onChange={handleChange}
               />
             </ItemStyle>
           </div>

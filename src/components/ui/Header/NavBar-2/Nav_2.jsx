@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import Nav_2Items from "./Nav_2Items";
-import { nav_2_data as data } from "../../../../DB/Local_Data_Base";
+import { nav_2_data as data } from "../../../../../DB/Local_Data_Base";
 
 function Nav_2() {
   const [activeLink, setActiveLink] = useState(null);

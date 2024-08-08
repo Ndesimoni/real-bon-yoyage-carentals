@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 
 //todo these are incoming components
-import { cars as allAvailableCars } from "../../DB/Local_Data_Base";
+import { cars as allAvailableCars } from "../../../DB/Local_Data_Base";
 import SingleTextImageView from "../../components/ui/Reuseable_Ui/SingleTextImageView";
 import VehicleContain from "./VehicleContain";
 import UsersChosenCar from "./UsersChosenCar";
@@ -18,15 +18,15 @@ const AllCars = () => {
 
     //todo reservation input data coming from the form
     const { state: usersReservationDetails } = useLocation();
-    console.log(usersReservationDetails);
+    // console.log(usersReservationDetails);
 
-    //////////////////////////////////////////////////////////////////
 
+    //todo this handles the booking as guest
     function onHandleBookingAsGuest(car) {
         setGuestBookingCar(!guestBookingCar);
         setShowCars(false);
         setDetailsFormNotFilled(car);
-        console.log(car);
+
     }
 
     return (

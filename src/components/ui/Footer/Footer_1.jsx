@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FooterItems } from "../../../DB/Local_Data_Base";
+import { FooterItems } from "../../../../DB/Local_Data_Base";
 
 const FooterStyles = styled.div({
   display: "flex",

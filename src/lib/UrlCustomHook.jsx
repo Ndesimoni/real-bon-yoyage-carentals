@@ -74,6 +74,9 @@ const dataValidation = {
   pickUpDate: "",
   dropOffDate: "",
   termConditions: "",
+  carName: "",
+  carImage: "",
+  price: ""
 };
 
 //todo this is the form input data

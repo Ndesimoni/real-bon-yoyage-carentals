@@ -1,9 +1,10 @@
 
-import { carTypeCategory } from "../../DB/Local_Data_Base";
+import { carTypeCategory } from "../../../DB/Local_Data_Base";
 import AllVehicleCategoryContain from "./AllVehicleCategoryContain";
 
 
 function AllVehicleCategory() {
+
 
   return (
     <main className="  bg-gray-100 flex justify-center items-center">

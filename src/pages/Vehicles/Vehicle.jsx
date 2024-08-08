@@ -1,4 +1,4 @@
-import { vehicleCategory } from "../../DB/Local_Data_Base";
+import { vehicleCategory } from "../../../DB/Local_Data_Base";
 import { useLocation, useParams } from "react-router-dom";
 
 import SingleTextImageView from "../../components/ui/Reuseable_Ui/SingleTextImageView";
@@ -21,6 +21,7 @@ function Vehicle() {
     const { carsId: incomingPath } = useParams();
     //todo reservation input data coming from input, various carTypes, ViewAllVehicle and allCars
     const { state: usersReservationDetails } = useLocation();
+    // console.log(usersReservationDetails)
 
     //todo form not filled but navigating to the booking page
     function onHandleBookingAsGuest(car) {
@@ -35,7 +36,6 @@ function Vehicle() {
         setCarDetailsFormFilled(car);
         setShowCars(false);
     }
-
 
     return (
         <>
@@ -72,6 +72,7 @@ function Vehicle() {
             {/* //todo this will render when a click is fired on either from the book as guest or book now in vehicle component only */}
             {!showCars && (
                 <UsersChosenCar
+                    usersReservationDetails={usersReservationDetails}
                     carDetailsFormNotFilled={carDetailsFormNotFilled}
                     carDetailsFormFilled={carDetailsFormFilled}
                 />
