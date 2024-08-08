@@ -25,22 +25,18 @@ const BookingForm = () => {
             </p>
           </div>
 
-          {/* //todo this is the names */}
           <SectionStyle className=" flex justify-between ">
-            {/* this is for first name */}
             <ItemStyle>
               <p>First Name: </p>
               <InputStyles type="text" placeholder="First Name" />
             </ItemStyle>
 
-            {/* this is for last name */}
             <ItemStyle>
               <p>Last Name: </p>
               <InputStyles type="text" placeholder="Last Name" />
             </ItemStyle>
           </SectionStyle>
 
-          {/* //todo this is the email */}
           <SectionStyle>
             <ItemStyle>
               <p>Email: </p>
