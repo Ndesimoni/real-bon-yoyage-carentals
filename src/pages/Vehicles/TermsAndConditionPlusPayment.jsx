@@ -1,8 +1,10 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 import {
   ItemStyle,
   Label,
 } from "../../components/Form/reservationForm/ReservationDropdown";
+import { useNavigate } from "react-router-dom";
 
 const TermsAndConditionPlusPayment = ({
   // carDetailsFormNotFilled,
@@ -13,33 +15,74 @@ const TermsAndConditionPlusPayment = ({
     usersReservationDetails
   );
 
+  const navigate = useNavigate();
+
   //todo this is for book and pay now
   function onHandleBookAndPayNow(e) {
     e.preventDefault();
 
     //todo handle payNow when the form was filled at start
     if (usersReservationDetails.stateOfOperation) {
-      setUserFinalDetails({
+      const newValue = {
         ...userFinalDetails,
 
         carName: carDetailsFormFilled.name,
         carImage: carDetailsFormFilled.image,
         price: carDetailsFormFilled.price,
-      });
-
-      console.log(userFinalDetails);
+      };
+      setUserFinalDetails(newValue);
     }
-
-    //todo handle payNow when the form was not filled at start
-    // console.log(carDetailsFormFilled)
-    // console.log(usersReservationDetails)
-    // console.log("pay now");
   }
 
   //todo this is for book and pay later
   function onHandleBookAndPayLater(e) {
     e.preventDefault();
-    console.log("pay later");
+
+    //todo handle payLater when the form was filled at start
+    if (usersReservationDetails.stateOfOperation) {
+      const newValue = {
+        ...userFinalDetails,
+
+        carName: carDetailsFormFilled.name,
+        carImage: carDetailsFormFilled.image,
+        price: carDetailsFormFilled.price,
+      };
+
+      setUserFinalDetails(newValue);
+
+      //todo this is the fetch data function
+      const fetchData = async () => {
+        try {
+          const response = await fetch("http://localhost:5000/user", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newValue),
+          });
+
+          const data = await response.json();
+          console.log(data);
+        } catch (error) {
+          console.log("error:", error);
+        }
+      };
+      fetchData();
+
+      // todo this is the sweet alert popup success
+      Swal.fire({
+        title: "Booking Successful",
+        text: "Thanks for booking with Bon Voyage Car Rentals!",
+        icon: "success",
+        color: "#90EE90",
+        animation: true,
+      });
+
+      //todo navigate to home after time out
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+    }
   }
 
   return (
